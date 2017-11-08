@@ -1,7 +1,15 @@
 {
-  "name": "mcm-design-components",
-  "version": "1.0.0",
-  "description": "mcm-design-components React component",
+  "name": "mcmakler-react-components",
+  "author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
+  "contributors": [
+    "Baruch Velez <baruch.velez@mcmakler.de",
+    "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
+    "Burak Polat <burak.polat@mcmakler.de>"
+  ],
+  "version": "4.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/mcmakler/components/packages/react-components",
+  "description": "mcmakler-react-components",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -18,7 +26,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "mcmakler-design-guide": "^3.1.8",
+    "mcmakler-design-guide": "^4.0.0",
     "prop-types": "^15.6.0",
     "react-icons": "^2.2.7"
   },
@@ -48,6 +56,6 @@
   "license": "MIT",
   "repository": "",
   "keywords": [
-    "react-component"
+    "mcmakler-react-components"
   ]
 }
