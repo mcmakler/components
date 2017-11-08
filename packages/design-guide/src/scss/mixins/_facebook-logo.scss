@@ -1,0 +1,12 @@
+@import "../_variables";
+
+@mixin facebook-logo($color: #43609C) {
+  content: "f";
+  position: absolute;
+  right: $grid-spacing;
+  display: block;
+  font-family: "Facebook Letter Faces", Arial;
+  font-weight: bold;
+  font-size: 24px;
+  color: $color;
+}

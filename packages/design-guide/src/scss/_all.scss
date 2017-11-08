@@ -1,0 +1,27 @@
+@import "grid";
+@import "typography";
+@import "links";
+@import "buttons";
+@import "figures";
+@import "tables";
+@import "elements";
+@import "carousel";
+@import "horizontal-rule";
+@import "sections";
+@import "helpers";
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,123 @@
+@import "includes/colors";
+@import "includes/greys";
+@import "mixins/respond-to";
+@import "mixins/facebook-logo";
+@import "mixins/twitter-logo";
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  min-height: 40px;
+  padding: 0 40px;
+  font-weight: 500;
+  font-size: inherit;
+  text-decoration: none;
+  outline: none;
+  appearance: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: .3s transform ease;
+    background-color: rgba(white, .15);
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  &:hover::after {
+    transform: none;
+  }
+
+  &:active {
+    transform: scale(.96);
+  }
+
+  @each $name, $hex in $colors {
+    $text-color: white;
+
+    @if lightness($hex) > 60 {
+      $text-color: black;
+    }
+
+    &_#{$name} {
+      background-color: #{$hex};
+      color: $text-color;
+    }
+  }
+
+  &_large {
+    display: inline-block;
+    padding: $grid-spacing ($grid-spacing * 3) $grid-spacing ($grid-spacing * 2);
+    min-height: 50px;
+    font-size: 15px;
+    @include respond-to("tablet") {
+      min-height: 60px;
+      font-size: 18px;
+    }
+  }
+
+  &_fixed-width {
+    max-width: 250px;
+  }
+
+  &_large::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    right: $grid-spacing * 2;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-50%);
+  }
+
+  &_fluid {
+    width: 100%;
+  }
+
+  &_flex {
+    display: flex;
+  }
+
+  &_secondary {
+    border: 1px solid map-get($greys, "secondary");
+    background-color: transparent;
+    color: map-get($greys, "secondaryAlt");
+  }
+
+  &_facebook {
+    padding-right: $grid-spacing * 3;
+    background-color: #43609C;
+    color: white;
+  }
+
+  &_facebook::before {
+    @include facebook-logo(white);
+  }
+
+  &_twitter {
+    padding-right: $grid-spacing * 3;
+    background-color: #61BFE8;
+    color: white;
+  }
+
+  &_twitter::before {
+    @include twitter-logo(white, #61BFE8);
+    transform: scale(0.1);
+    top: -22px;
+    left: auto;
+    right: -13px;
+  }
+}

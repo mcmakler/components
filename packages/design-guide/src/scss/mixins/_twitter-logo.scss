@@ -1,0 +1,12 @@
+@mixin twitter-logo($color: #61BFE8, $transparent: white) {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5.125em;
+  width: 5.125em;
+  border-radius: 100%;
+  background-color: $color;
+  box-shadow: 1.1em -6.05em 0 1.85em $transparent, 1.2em -3.12em 0 -0.15em $color, 1.975em -5.35em 0 1.84em $transparent, 1.5em -2.2em 0 -0.125em $color, -2.1em -6.7em 0 4.75em $transparent, -5.5em -0.8em 0 0.07em $color, -7.2em -1.35em 0 0.07em $transparent, -5.5em 1em 0 0.07em $color, -6.8em 1.1em 0 0.07em $transparent, -4.7em 2.8em 0 0.07em $color, -8.3em 1.175em 0 2.775em $transparent, -8.275em -6.575em 0 2.775em $transparent, -4.75em 0.35em 0 4.75em $color;
+}

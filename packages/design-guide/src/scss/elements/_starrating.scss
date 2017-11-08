@@ -1,0 +1,28 @@
+@import "../variables";
+@import "../typography";
+
+.stars-rating {
+  .stars {
+    position: relative;
+    color: map-get($greys, "secondary");
+    display: inline;
+    overflow: hidden;
+    margin-right: 10px;    
+    font-size: 25px;
+    &__filled {
+      position: absolute;
+      overflow: hidden;
+      color:map-get($colors, "primary");
+      z-index:2;
+    }
+    &__empty {
+      position:relative;
+      z-index:1;
+      display: inline;
+    }
+  }
+
+  .rating {
+    font-size: 22px;
+  }
+}

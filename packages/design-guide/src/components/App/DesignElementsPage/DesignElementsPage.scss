@@ -1,0 +1,11 @@
+@import "../../../scss/elements";
+
+.design-elements-page {
+  .design-elements-page__code-block {
+    margin-top: $grid-spacing;
+  }
+
+  .line-graph__item {
+    min-width: 300px;
+  }
+}

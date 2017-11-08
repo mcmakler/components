@@ -1,0 +1,106 @@
+@mixin burger-bar {
+  z-index: 2;
+  width: 100%;
+  height: 2px;
+  transition: .3s transform ease, .1s background-color ease;
+  background-color: white;
+}
+
+.burger {
+  cursor: pointer;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 200;
+  transition: .3s transform ease;
+  will-change: transform;
+
+  &.active {
+    transform: translateX(236px);
+  }
+
+  .burger__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: .3s transform ease, .3s box-shadow ease, .3s background-color ease;
+    will-change: box-shadow, transform, background-color;
+    background-color: map-get($greys, "body");
+    box-shadow: 0 6px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .burger__circle:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 30px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .burger__circle:active {
+    transform: scale(.9);
+    transition: .1s transform ease, .1s box-shadow ease;
+    box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .burger__circle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform-origin: center;
+    transform: scale(0);
+    transition: .3s transform ease;
+    will-change: transform;
+    background-color: map-get($colors, "primary");
+  }
+
+  &.active > .burger__circle {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  &.active > .burger__circle::after {
+    transform: scale(1);
+  }
+
+  .burger__bars {
+    @include burger-bar;
+
+    position: relative;
+    width: calc(100% - 20px);
+  }
+
+  .burger__bars::before {
+    @include burger-bar;
+
+    content: "";
+    position: absolute;
+    top: -6px;
+  }
+
+  .burger__bars::after {
+    @include burger-bar;
+
+    content: "";
+    position: absolute;
+    top: 6px;
+  }
+
+  &.active .burger__bars {
+    background-color: transparent;
+  }
+
+  &.active .burger__bars::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  &.active .burger__bars::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+}

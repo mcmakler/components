@@ -1,0 +1,98 @@
+@import "../mixins/prepend-circle";
+@import "../includes/greys";
+
+.accordion {
+
+  &__radio {
+    display: none;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__item-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 40px;
+    text-align: left;
+    font-weight: 500;
+    cursor: pointer;
+    @include prepend-circle(22px);
+  }
+
+  &__item-header::before {
+    content: "+";
+    top: 6px;
+    transition: border-color .1s ease;
+    will-change: border-color;
+  }
+
+  &__item-header:hover::before {
+    border-color: map-get($colors, "primary");
+  }
+
+  &__radio:checked + &__item > &__item-header::before {
+    content: "–";
+  }
+
+  &__item-content {
+    box-sizing: border-box;
+    height: 0;
+    overflow: hidden;
+    transition: .6s opacity ease, .3s transform ease;
+    will-change: opacity, transform;
+    transform: translateY($grid-spacing);
+    opacity: 0;
+  }
+
+  &__radio:checked + &__item > &__item-content {
+    height: auto;
+    margin: ($grid-spacing / 2) 0;
+    opacity: 1;
+    transform: none;
+  }
+
+  &__item-header_table {
+    @include prepend-circle(22px, true, true); // should be 24 but there"s a 2px border.
+    padding-left: $grid-spacing;
+    padding-top: $grid-spacing / 2 + 2;
+    padding-bottom: $grid-spacing / 2 + 2;
+    transition: .15s background-color ease;
+    will-change: background-color;
+    background-color: map-get($greys, "bg");
+  }
+
+  &__item-header_table::before {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__item-header_table:hover {
+    background-color: map-get($greys, "table");
+  }
+
+  &__item ~ &__item > &__item-header_table {
+    border-top: 1px solid white;
+  }
+
+  &__item-header_table::before {
+    content: "+";
+    left: auto;
+  }
+
+  &__item-content_table {
+    background-color: map-get($greys, "bg");
+  }
+
+  &__radio:checked + &__item > &__item-content_table {
+    margin: 0;
+    padding: $grid-spacing * 2;
+  }
+
+  &__radio:checked + &__item > &__item-header_table {
+    background-color: map-get($greys, "table");
+  }
+}

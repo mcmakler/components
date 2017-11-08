@@ -1,0 +1,9 @@
+@import "../variables";
+
+@mixin text-colors {
+  @each $name, $hex in $colors {
+    &_color_#{$name} {
+      color: $hex;
+    }
+  }
+}

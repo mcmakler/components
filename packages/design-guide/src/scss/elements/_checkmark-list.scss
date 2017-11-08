@@ -1,0 +1,53 @@
+@import "../variables";
+@import "../mixins/list-reset";
+@import "../mixins/prepend-circle";
+
+$checkmark-width: 8px;
+
+.checkmark-list {
+  @include list-reset;
+
+  &__item {
+    position: relative;
+    padding-left: $checkmark-width + $grid-spacing;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: $checkmark-width;
+    height: $checkmark-width * 2;
+    border-bottom: 2px solid map-get($colors, "primary");
+    border-right: 2px solid map-get($colors, "primary");
+    transform: rotate(45deg);
+  }
+
+  &__item + &__item {
+    margin-top: $grid-spacing - 3px;
+  }
+
+  &__item_table {
+    padding: ($grid-spacing / 2) ($checkmark-width + ($grid-spacing * 2)) ($grid-spacing / 2) $grid-spacing;
+    background-color: map-get($greys, "bg");
+  }
+
+  &__item_table + &__item_table {
+    margin-top: 0;
+    border-top: 1px solid white;
+  }
+
+  &__item_table::before {
+    top: 11px;
+    left: auto;
+    right: $grid-spacing;
+  }
+}
+
+.background_bg .checkmark-list__item_table {
+  background: white;
+  border-color: map-get($greys, "bg");
+}
+

@@ -1,0 +1,71 @@
+@import "../variables";
+@import "../mixins/grey-backgrounds";
+
+.tabs {
+  min-height: 175px;
+  padding: $grid-spacing;
+  box-sizing: border-box;
+
+  &__tab-container {
+    position: relative;
+    display: flex;
+  }
+
+  &__tab + #{&}__tab {
+    margin-left: $grid-spacing;
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  &__tab-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+    will-change: transform;
+    background-color: currentColor;
+  }
+
+  &__link:hover > &__tab-header::after {
+    opacity: .2;
+    transform: scaleX(.5);
+  }
+
+  &__radio:checked + &__link {
+    font-weight: 500;
+  }
+
+  &__radio:checked + &__link > &__tab-header::after {
+    transform: none;
+    opacity: 1;
+  }
+
+  &__radio:checked + &__link + &__tab-content {
+    display: block;
+  }
+
+  &__tab-content {
+    position: absolute;
+    top: $grid-spacing * 2;
+    left: 0;
+    display: none;
+    font-weight: 300;
+  }
+
+  @include grey-backgrounds;
+}

@@ -1,0 +1,11 @@
+.link,
+a {
+  font-weight: 400;
+  text-decoration: underline;
+  color: map-get($greys, "body");
+}
+
+.inverted .link,
+.inverted a {
+  color: map-get($greys, "lightest");
+}

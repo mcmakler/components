@@ -1,0 +1,17 @@
+@import "../includes/greys";
+
+@mixin grey-backgrounds($text-color: false) {
+  @each $name, $hex in $greys {
+    &.background_#{$name} {
+      background-color: $hex;
+
+      @if ($text-color) {
+        @if (lightness($hex) > 70) {
+          color: map-get($greys, "secondary");
+        } @else {
+          color: map-get($greys, "lightest");
+        }
+      }
+    }
+  }
+}

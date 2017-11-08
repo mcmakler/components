@@ -1,0 +1,43 @@
+@import "../variables";
+
+@mixin prepend-circle($circle-size: 30px, $pad: false, $reverse: false) {
+  $horizontal-offset: 0;
+
+  @if $pad == true {
+    $horizontal-offset: $grid-spacing;
+  }
+
+  $content-padding: $horizontal-offset + $circle-size + $grid-spacing;
+
+  position: relative;
+  box-sizing: border-box;
+
+  @if $reverse == false {
+    padding-left: $content-padding;
+  } @else {
+    padding-right: $content-padding;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    @if $reverse == false {
+      left: $horizontal-offset;
+    } @else {
+      right: $horizontal-offset;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $circle-size;
+    height: $circle-size;
+    border: 2px solid map-get($greys, "line");
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 0;
+    color: map-get($colors, "primary");
+  }
+}

@@ -1,0 +1,12 @@
+@mixin graph-label {
+  line-height: 1;
+  font-weight: 500;
+  font-size: 12px;
+  color: map-get($greys, "secondary");
+}
+
+@mixin graph-value {
+  line-height: 1;
+  font-family: map-get($fonts, "headingFont");
+  font-size: 20px;
+}

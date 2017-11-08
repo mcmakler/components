@@ -1,0 +1,47 @@
+@import "variables";
+
+.table {
+  $vertical-padding: 16px;
+
+  margin: $grid-spacing 0 ($grid-spacing * 2);
+  width: 100%;
+  border-collapse: collapse;
+
+  &__row {
+    min-height: 50px;
+  }
+
+  &__cell {
+    box-sizing: border-box;
+    padding: $vertical-padding $grid-spacing;
+    border: 2px solid white;
+    line-height: 1;
+    text-align: left;
+    background-color: map-get($greys, "bg");
+  }
+
+  &__cell_inverted,
+  &__header_inverted {
+    border-color: map-get($greys, "bg");
+  }
+
+  &__cell_header_inverted {
+    border-bottom: 0;
+  }
+
+  &__cell_inverted {
+    border-top: 0;
+  }
+
+  &__cell_inverted {
+    background-color: white;
+  }
+
+  &__cell_header {
+    font-size: 13px;
+    font-weight: 700;
+    color: map-get($greys, "secondary");
+    background-color: map-get($greys, "table");
+  }
+
+}

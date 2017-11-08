@@ -1,0 +1,96 @@
+@import "../variables";
+@import "../mixins/grey-backgrounds";
+@import "../mixins/respond-to";
+
+.infobox {
+  --infobox-size: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 60px;
+  padding: ($grid-spacing);
+  text-align: center;
+  background-color: map-get($greys, "bg");
+  @include respond-to('tablet') {
+    flex-direction: column;
+    flex: 1 1 var(--infobox-size);
+    min-height: 130px;
+  }
+  @include respond-to('tablet_landscape') {
+    flex-direction: row;
+    min-height: 60px;
+  }
+  @include respond-to('desktop') {
+    flex-direction: column;
+    flex: 1 1 var(--infobox-size);
+    min-height: 130px;
+    max-width: var(--infobox-size);
+  }
+
+  &__container:not(.is-desktop) {
+    @include respond-to('tablet') {
+      display: flex;
+    }
+    @include respond-to('tablet_landscape') {
+      display: block;
+    }
+    @include respond-to('desktop') {
+      display: flex;
+    }
+  }
+
+  &_single-line {
+    flex-direction: column;
+    flex: 1 1 var(--infobox-size);
+    min-height: 130px;
+  }
+
+  &__header {
+    margin-right: auto;
+    line-height: 1;
+    font-family: map-get($fonts, "headingFont");
+    font-size: 32px;
+    color: map-get($colors, "primary");
+    @include respond-to('tablet') {
+      margin-right: 0;
+    }
+    @include respond-to('tablet_landscape') {
+      margin-right: auto;
+    }
+    @include respond-to('desktop') {
+      margin-right: 0;
+    }
+  }
+
+  &__header_single-line {
+    margin-right: auto;
+  }
+
+  &__content {
+    margin-top: $grid-spacing / 2;
+    margin-bottom: 0;
+  }
+
+  & + & {
+    margin-top: 2px;
+    @include respond-to('tablet') {
+      margin-top: 0;
+      margin-left: 2px;
+    }
+    @include respond-to('tablet_landscape') {
+      margin-top: 2px;
+      margin-left: 0;
+    }
+    @include respond-to('desktop') {
+      margin-top: 0;
+      margin-left: 2px;
+    }
+  }
+
+  @include grey-backgrounds;
+}
+
+.background_bg .infobox {
+  background-color: white;
+}

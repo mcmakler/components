@@ -1,0 +1,110 @@
+@import "variables";
+@import "mixins/respond-to";
+
+.timeline {
+  display: flex;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    padding-bottom: $grid-spacing;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: auto;
+
+    &::-webkit-scrollbar-button {
+      display: none;
+      height: 13px;
+      border-radius: 0px;
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar-button:hover {
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: map-get($greys, "line");
+    }
+    &::-webkit-scrollbar-track {
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar-track:hover {
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar {
+      height: 4px;
+      -webkit-appearance: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1 0 calc(100% - #{$grid-spacing * 4});
+    width: calc(100% - #{$grid-spacing * 4});
+    @include respond-to("tablet") {
+      flex: 1 0 calc(50% - #{$grid-spacing * 4});
+      width: calc(50% - #{$grid-spacing * 4});
+    }
+    @include respond-to("tablet_landscape") {
+      flex: 1 0 calc(40% - #{$grid-spacing * 6});
+      width: calc(40% - #{$grid-spacing * 6});
+    }
+    @include respond-to("desktop") {
+      flex: 1 0 calc(25% - #{$grid-spacing * 1.5});
+    }
+  }
+
+  &__image {
+    margin-bottom: $grid-spacing;
+  }
+
+  &__heading {
+    margin: 0;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.471;
+  }
+
+  &__subheading {
+    margin: 0;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    line-height: 1.462;
+    color: map-get($greys, "secondary");
+  }
+
+  &__line {
+    position: relative;
+    display: block;
+    margin: $grid-spacing 0;
+    width: calc(100% + #{$grid-spacing * 1.5});
+    height: 2px;
+    border: 0;
+    background-color: map-get($greys, "line");
+  }
+
+  &__line::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid map-get($greys, "line");
+    transform: translateY(-50%);
+    background-color: white;
+  }
+
+  &__line_end {
+    width: 15px;
+  }
+
+  &__item + &__item {
+    margin-left: $grid-spacing * 1.5;
+  }
+}

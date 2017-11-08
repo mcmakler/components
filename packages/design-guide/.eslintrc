@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "document": true,
+    "test": true
+  },
+  "env": {
+    "jasmine": true
+  }
+}

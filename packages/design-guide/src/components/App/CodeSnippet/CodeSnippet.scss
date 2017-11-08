@@ -1,0 +1,9 @@
+@import "../../../../node_modules/highlight.js/styles/tomorrow-night.css";
+
+.code-snippet {
+  padding: $grid-spacing;
+  height: 400px;
+  overflow: auto;
+  text-align: left;
+  max-width: 540px;
+}

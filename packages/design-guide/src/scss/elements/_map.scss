@@ -1,0 +1,25 @@
+.map {
+  &__frame {
+    height: 360px;
+    width: 100%;
+    border: 0;
+  }
+
+  &__map-container {
+    padding-right: 0;
+    flex: 1 0 300px;
+  }
+
+  &__address-container {
+    flex: 1 1 auto;
+  }
+
+  &__headline {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.map_2columns .columns {
+  align-items: center;
+}

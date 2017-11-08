@@ -1,0 +1,74 @@
+@import "../variables";
+@import "../mixins/graphs";
+@import "../mixins/respond-to";
+
+.circle-graph {
+  --circle-size: calc(50vw - 50px);
+  --circle-stroke: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  min-width: var(--circle-size);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  text-align: center;
+  background: white;
+  @include respond-to('tablet') {
+    --circle-size: 200px;
+  }
+  @include respond-to('desktop') {
+    --circle-size: 270px;
+  }
+
+  .circle-graph__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    transform: rotate(-90deg);
+  }
+
+  .circle-graph__bar-base,
+  .circle-graph__bar-value {
+    r: calc((var(--circle-size) / 2) - var(--circle-stroke));
+    cx: calc(var(--circle-size) / 2);
+    cy: calc(var(--circle-size) / 2);
+    fill: none;
+    stroke-width: var(--circle-stroke);
+  }
+
+  .circle-graph__bar-base {
+    stroke: map-get($greys, "bg");
+  }
+
+  .circle-graph__bar-value {
+    stroke-dasharray: 313%;
+    stroke: map-get($colors, "primary");
+  }
+
+  .circle-graph__value {
+    @include graph-value;
+
+    font-size: 6vw;
+    @include respond-to("tablet") {
+      font-size: 30px;
+      margin-bottom: $grid-spacing / 2;
+    }
+  }
+
+  .circle-graph__label {
+    @include graph-label;
+
+    font-weight: 400;
+    font-size: 11px;
+    color: #333;
+    @include respond-to("tablet") {
+      margin-top: $grid-spacing;
+    }
+  }
+}

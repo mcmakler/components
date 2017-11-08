@@ -1,0 +1,8 @@
+@import "variables";
+
+.horizontal-rule,
+hr {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid map-get($greys, "line");
+}

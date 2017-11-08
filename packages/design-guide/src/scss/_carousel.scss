@@ -1,0 +1,120 @@
+@import "variables";
+@import "mixins/respond-to";
+
+.carousel {
+  display: flex;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    padding-bottom: $grid-spacing;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: auto;
+
+    &::-webkit-scrollbar-button {
+      display: none;
+      height: 13px;
+      border-radius: 0px;
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar-button:hover {
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: map-get($greys, "line");
+    }
+    &::-webkit-scrollbar-track {
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar-track:hover {
+      background-color: map-get($greys, "bg");
+    }
+    &::-webkit-scrollbar {
+      height: 4px;
+      -webkit-appearance: none;
+    }
+    @include respond-to('tablet') {
+      &::-webkit-scrollbar {
+        display: none;
+        -webkit-appearance: initial;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 calc(100% - #{$grid-spacing * 4});
+    width: calc(100% - #{$grid-spacing * 4});
+    @include respond-to("tablet") {
+      flex: 1 0 calc(50% - #{$grid-spacing * 4});
+      width: calc(50% - #{$grid-spacing * 4});
+    }
+    @include respond-to("tablet_landscape") {
+      flex: 1 0 calc(40% - #{$grid-spacing * 6});
+      width: calc(40% - #{$grid-spacing * 6});
+    }
+    @include respond-to("desktop") {
+      flex: 1 0 calc(25% - #{$grid-spacing * 1.5});
+    }
+  }
+
+  &__navigation {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 80px;
+    width: 80px;
+    cursor: pointer;
+    background: white;
+    @include respond-to('tablet') {
+      display: flex;
+    }
+  }
+
+  &__navigation_prev::before,
+  &__navigation_next::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid map-get($greys, "secondary");
+    transition: .3s transform ease;
+  }
+
+  &__navigation_prev::before {
+    --rotationPrev: -45deg;
+    --translateX: 0;
+    --rotationNext: 0;
+
+    border-left: 2px solid map-get($greys, "secondary");
+    transform: rotate(var(--rotationPrev)) translateX(var(--translateX)) translateY(var(--translateX));
+  }
+
+  &__navigation_next::before {
+    --rotationPrev: 45deg;
+    --translateX: 0;
+    --rotationNext: 0;
+
+    border-right: 2px solid map-get($greys, "secondary");
+    transform: rotate(var(--rotationNext)) translateX(var(--translateX)) translateY(var(--translateY));
+  }
+
+  &__navigation_prev:hover::before {
+    --translateX: $grid-spacing * -.5;
+  }
+
+  &__navigation_next:hover::before {
+    --translateX: $grid-spacing * .5;
+    --translateY: $grid-spacing * -.5;
+  }
+
+  &__navigation {
+  }
+
+  &__item + &__item {
+    margin-left: $grid-spacing * 1.5;
+  }
+}

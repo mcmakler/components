@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../mixins/list-reset";
+@import "../mixins/prepend-circle";
+
+.anchor-list {
+  @include list-reset;
+
+  &__item {
+    font-weight: 500;
+
+    @include prepend-circle(22px, false);
+  }
+
+  &__item::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 9px;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-top: 2px solid map-get($colors, "primary");
+    border-right: 2px solid map-get($colors, "primary");
+    transform: rotate(45deg);
+  }
+
+  &__item + &__item {
+    margin-top: $grid-spacing - 3px;
+  }
+}

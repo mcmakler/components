@@ -1,0 +1,33 @@
+@import "../variables";
+@import "../mixins/respond-to";
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: $grid-spacing;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: map-get($greys, "bg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include respond-to("tablet_landscape") {
+    min-height: 340px;
+  }
+
+  &__heading {
+    margin-bottom: $grid-spacing;
+  }
+
+  &__separator {
+    display: block;
+    height: 2px;
+    width: $grid-spacing * 2;
+    margin: 30px auto;
+    border: 0;
+    background-color: map-get($colors, "primary");
+  }
+}

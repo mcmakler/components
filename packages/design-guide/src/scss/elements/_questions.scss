@@ -1,0 +1,47 @@
+@import "../includes/colors";
+@import "../includes/greys";
+@import "../includes/fonts";
+@import "../mixins/grey-backgrounds";
+@import "../mixins/prepend-circle";
+
+.question {
+  @include prepend-circle(22px, true);
+  padding: 0 ($grid-spacing * 2) 0 48px;
+  margin: ($grid-spacing * 2) auto;
+
+  &::before {
+    content: "?";
+    top: 0;
+    left: 0;
+    font-size: 16px;
+  }
+
+  &__title {
+    display: block;
+    margin-top: 0;
+    font-family: map-get($fonts, "headingFont");
+    font-weight: 500;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.674;
+  }
+
+  @include grey-backgrounds;
+
+  &_boxed {
+    padding: $grid-spacing $grid-spacing $grid-spacing 65px;
+  }
+
+  &_boxed::before {
+    top: 20px;
+    left: 20px;
+  }
+
+  &__title_boxed {
+    margin-top: 0;
+  }
+
+  &__content_boxed {
+    margin-bottom: 0;
+  }
+}

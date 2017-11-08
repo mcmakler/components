@@ -1,0 +1,63 @@
+@import "variables";
+@import "mixins/grey-backgrounds";
+
+$tablet: 768px;
+@import "~bulma/sass/utilities/all";
+@import "~bulma/sass/grid/all";
+
+.columns {
+  margin-left: $grid-spacing * -1;
+  margin-right: $grid-spacing * -1;
+
+  &_center-horizontal {
+    justify-content: center;
+  }
+
+  &_center-vertical {
+    align-items: center;
+  }
+
+  &_reverse {
+    flex-direction: row-reverse;
+  }
+
+  &_wrap {
+    flex-wrap: wrap;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $grid-spacing;
+  }
+}
+
+.column {
+  padding: $grid-spacing;
+  box-sizing: border-box;
+
+  &_no-top-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &_no-bottom-padding {
+    padding: 0;
+  }
+
+  & > .columns {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include grey-backgrounds;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 $grid-spacing;
+
+  .container {
+    padding: 0;
+  }
+}

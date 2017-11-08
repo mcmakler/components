@@ -1,0 +1,122 @@
+@import "variables";
+
+.inverted {
+  color: map-get($greys, "secondary");
+}
+
+.inverted .heading {
+  color: map-get($greys, "lightest");
+}
+
+.heading {
+  margin: 0;
+  color: map-get($greys, "darkest");
+  word-wrap: break-word;
+  -webkit-hyphens: auto; // why doesn"t autoprefixer get this?
+  hyphens: auto;
+
+  & + &,
+  & + .paragraph,
+  & + p {
+    margin-top: $grid-spacing / 2;
+  }
+
+  &_no-top-margin {
+    margin-top: 0;
+  }
+
+  &_no-bottom-margin {
+    margin-bottom: 0;
+  }
+
+  &_inverted {
+    color: map-get($greys, "lightest");
+  }
+
+  &_primary {
+    font-family: map-get($fonts, "headingFont") map-get($fonts, "headingFontFallback");
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.286;
+  }
+
+  &_secondary {
+    font-family: map-get($fonts, "headingFont") map-get($fonts, "headingFontFallback");
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  &_tertiary {
+    font-family: map-get($fonts, "bodyFont") map-get($fonts, "bodyFontFallback");
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.364;
+  }
+
+  &_tertiary-inverted {
+    color: map-get($greys, "secondary");
+  }
+
+  &_quarternary {
+    font-family: map-get($fonts, "bodyFont") map-get($fonts, "bodyFontFallback");
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.471;
+  }
+
+  &_quinary {
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    line-height: 1.462;
+    color: map-get($greys, "secondary");
+  }
+}
+
+.heading + .paragraph,
+.heading_primary + p,
+.heading_secondary + p,
+.heading_tertiary + p {
+  margin-top: $grid-spacing * 2;
+}
+
+.paragraph,
+p {
+  margin: 0;
+
+  &_clip {
+    max-width: 550px;
+  }
+
+  &_center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &_chain + &_chain {
+    margin-top: $grid-spacing;
+  }
+}
+
+.inverted {
+  color: map-get($greys, "secondary");
+}
+
+.fineprint {
+  font-size: 12px;
+  line-height: 1.667;
+  color: map-get($greys, "secondary");
+}
+
+body {
+  font-family: map-get($fonts, "bodyFont") map-get($fonts, "bodyFontFallback");
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.733;
+  color: map-get($greys, "darkest");
+}
+
+input, textarea, select, button, meter, progress, figure {
+  font: inherit;
+}
