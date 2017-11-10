@@ -28,7 +28,8 @@
     "classnames": "^2.2.5",
     "mcmakler-design-guide": "^4.0.0",
     "prop-types": "^15.6.0",
-    "react-icons": "^2.2.7"
+    "react-icons": "^2.2.7",
+    "react-image-gallery": "^0.8.5"
   },
   "peerDependencies": {
     "react": "15.x"
@@ -37,6 +38,7 @@
     "@storybook/addon-info": "^3.2.14",
     "@storybook/react": "^3.2.14",
     "babel-eslint": "^8.0.1",
+    "base64-inline-loader": "^1.1.0",
     "css-loader": "^0.28.7",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
