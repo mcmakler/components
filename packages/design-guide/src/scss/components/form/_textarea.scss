@@ -1,0 +1,6 @@
+@import "./form_component";
+
+.textarea {
+  @extend %form-component;
+  min-height: 140px;
+}

@@ -5,35 +5,70 @@ import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import './Select.scss';
 
 const Select = (props) => {
-  const { options, kind } = props;
+  const {
+    className,
+    kind,
+    onChange,
+    onClick,
+    options,
+    ...other
+  } = props;
+
   if (!options) return null;
 
   const optionList = options.map(i =>
-    <option key={i.id}> {i.option} </option>);
+    (
+      <option
+        key={i.id}
+        value={i.value}
+      >
+        {i.option}
+      </option>
+    ));
 
   const styledSelectClass = classNames({
-    styledSelect: true,
-    'styledSelect--secondary': kind === 'secondary',
+    select: true,
+    'select--secondary': kind === 'secondary',
+    [className]: className,
   });
+
+  const handleChange = (evt) => {
+    onChange(evt);
+  };
+
+  const handleClick = (evt) => {
+    onClick(evt);
+  };
 
   return (
     <div className={styledSelectClass} >
-      <select className="styledSelect__select">
-        {optionList}
-      </select>
-      <i className="styledSelect__icon">
+      <i className="select__icon">
         <FaChevronDown />
       </i>
+      <select
+        className="select__select"
+        onChange={handleChange}
+        onClick={handleClick}
+        {...other}
+      >
+        {optionList}
+      </select>
     </div>
   );
 };
 
 Select.propTypes = {
-  options: PropTypes.instanceOf(Object).isRequired,
+  className: PropTypes.string,
   kind: PropTypes.oneOf(['primary', 'secondary']).isRequired,
+  options: PropTypes.instanceOf(Object).isRequired,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 Select.defaultProps = {
+  className: '',
+  onChange: () => {},
+  onClick: () => {},
 };
 
 export default Select;
