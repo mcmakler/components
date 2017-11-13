@@ -15,7 +15,7 @@ Setup the dependencies
 yarn
 yarn bootstrap
 ```
-This will run install node modules in all included packages and link them together.
+This will install npm packages in all librarie inside `packages` folder and `npm link` them together.
 
 ## Run the Storybook based demo of the components
 The package react-components contains [Storybook](https://github.com/storybooks/storybook) as a demo.
