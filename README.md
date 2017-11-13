@@ -10,12 +10,19 @@ git clone https://github.com/mcmakler/components.git
 cd components
 ```
 
-Setup the dependencies
+### Setup the dependencies
+
+First install `devDependencies`
 ```
 yarn
+```
+
+Then install all NPM packages for every library inside the `packages` folder and link them together.
+We're able to do this through [lerna](https://github.com/lerna/lerna).
+```
 yarn bootstrap
 ```
-This will install npm packages in all librarie inside `packages` folder and `npm link` them together.
+
 
 ## Run the Storybook based demo of the components
 The package react-components contains [Storybook](https://github.com/storybooks/storybook) as a demo.
