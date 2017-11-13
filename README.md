@@ -12,10 +12,10 @@ cd components
 
 Setup the dependencies
 ```
-npm install --global lerna
-lerna bootstrap
+yarn
+yarn bootstrap
 ```
-This will run npm install on all included packages and symlink them with each other. So all local changes you do in one package are available in the other one.
+This will run install node modules in all included packages and link them together.
 
 ## Run the Storybook based demo of the components
 The package react-components contains [Storybook](https://github.com/storybooks/storybook) as a demo.
