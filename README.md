@@ -26,4 +26,4 @@ npm run serve
 ```
 
 ## How to create new reusable components
-All styling shall be independently usable from the react components themselve. To enable independent usage in static projects that are not able to use react. All styles of a component go to design-guide while the reusable react component shall life in the react-components package.
+All styling shall be independently usable from the react components themselves. To enable independent usage in static projects that are not able to use react. All styles of a component go to design-guide while the reusable react component shall life in the react-components package.
