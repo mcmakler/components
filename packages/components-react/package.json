@@ -1,19 +1,19 @@
 {
-  "name": "mcmakler-components-react",
+  "name": "@mcmakler/mcmakler-components-react",
   "author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
   "contributors": [
     "Baruch Velez <baruch.velez@mcmakler.de",
     "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
     "Burak Polat <burak.polat@mcmakler.de>"
   ],
-  "version": "0.0.1-beta.3",
+  "version": "0.0.1-beta.4",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
-    "es"
+    "es/"
   ],
   "scripts": {
     "build": "nwb build-react-component --no-demo --copy-files && gulp",

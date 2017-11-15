@@ -1,12 +1,12 @@
 {
-  "name": "mcmakler-components-style",
+  "name": "@mcmakler/mcmakler-components-style",
   "author": "Baruch Velez <baruch.velez@mcmakler.de",
   "contributors": [
     "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
     "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
     "Burak Polat <burak.polat@mcmakler.de>"
   ],
-  "version": "0.0.1-beta.3",
+  "version": "0.0.1-beta.4",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/design-guide",
   "scripts": {
@@ -24,6 +24,6 @@
     "bulma": "^0.3.1"
   },
   "files": [
-    "dist"
+    "dist/"
   ]
 }
