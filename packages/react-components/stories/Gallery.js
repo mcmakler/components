@@ -19,13 +19,26 @@ const galleryImages = [
 
 storiesOf('Gallery', module)
   .addWithInfo(
-    'Gallery Example',
+    'With default properties',
     `
-    Gallery
+    Gallery demo with default properties
   `,
     () => (
       <Gallery
-        images={galleryImages}
+        items={galleryImages}
+      />
+    ),
+  )
+  .addWithInfo(
+    'Without thumbnails and with autoplay is active',
+    `
+    Gallery demo without thumbnails and with autoplay is active
+    `,
+    () => (
+      <Gallery
+        items={galleryImages}
+        autoPlay
+        showThumbnails={false}
       />
     ),
   );
