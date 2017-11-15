@@ -6,7 +6,7 @@
     "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
     "Burak Polat <burak.polat@mcmakler.de>"
   ],
-  "version": "0.0.1-beta.4",
+  "version": "0.0.1-beta.5",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
