@@ -1,4 +1,14 @@
 {
+	"name": "mcmakler-components",
+	"author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
+	"contributors": [
+		"Baruch Velez <baruch.velez@mcmakler.de",
+		"Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
+		"Burak Polat <burak.polat@mcmakler.de>"
+	],
+	"license": "MIT",
+  "repository": "https://github.com/mcmakler/components/",
+	"description": "monorepository for components used internally at McMakler GmbH",
 	"scripts": {
 		"bootstrap": "lerna bootstrap"
 	},
