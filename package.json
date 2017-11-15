@@ -1,18 +1,21 @@
 {
-	"name": "mcmakler-components",
-	"author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
-	"contributors": [
-		"Baruch Velez <baruch.velez@mcmakler.de",
-		"Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
-		"Burak Polat <burak.polat@mcmakler.de>"
-	],
-	"license": "MIT",
-	"repository": "https://github.com/mcmakler/components/",
-	"description": "monorepository for components used internally at McMakler GmbH",
-	"scripts": {
-		"bootstrap": "lerna bootstrap"
-	},
-	"devDependencies": {
-		"lerna": "^2.5.1"
-	}
+  "name": "mcmakler-components",
+  "author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
+  "contributors": [
+    "Baruch Velez <baruch.velez@mcmakler.de",
+    "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
+    "Burak Polat <burak.polat@mcmakler.de>"
+  ],
+  "license": "MIT",
+  "version": "0.0.1-beta.1",
+  "repository": "https://github.com/mcmakler/components/",
+  "description": "monorepository for components used internally at McMakler GmbH",
+  "scripts": {
+    "lerna": "lerna",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^2.5.1"
+  }
 }
