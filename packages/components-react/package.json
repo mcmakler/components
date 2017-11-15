@@ -13,7 +13,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
-    "es/"
+    "es/**/*"
   ],
   "scripts": {
     "build": "nwb build-react-component --no-demo --copy-files && gulp",
