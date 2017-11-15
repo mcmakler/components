@@ -8,11 +8,10 @@ const Gallery = props => (
   />
 );
 
-Gallery.propTypes = ImageGallery.propTypes;
-
-ImageGallery.defaultProps.thumbnailPosition = 'top';
-ImageGallery.defaultProps.showPlayButton = false;
-
-Gallery.defaultProps = ImageGallery.defaultProps;
+Gallery.defaultProps = {
+  ...ImageGallery.defaultProps,
+  thumbnailPosition: 'top',
+  showPlayButton: false,
+};
 
 export default Gallery;

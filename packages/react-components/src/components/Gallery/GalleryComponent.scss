@@ -1,5 +1,6 @@
 @import "~react-image-gallery/styles/scss/image-gallery";
 @import "~mcmakler-design-guide/src/scss/mixins/respond-to";
+@import "~mcmakler-design-guide/src/scss/includes/greys";
 
 @font-face {
   font-family: "fontello";
@@ -13,9 +14,13 @@
   font-style: normal;
 }
 
-@include respond-to("tablet", "max-width") {
+.image-gallery-thumbnails-wrapper {
+  display: none;
+}
+
+@include respond-to("tablet") {
   .image-gallery-thumbnails-wrapper {
-    display: none !important;
+    display: block;
   }
 }
 
@@ -34,7 +39,7 @@
     right: -40px;
   }
   .image-gallery-thumbnails-wrapper {
-    display: none !important;
+    display: none;
   }
   .image-gallery-fullscreen-button {
     top: -20px;
@@ -44,7 +49,7 @@
 }
 
 .image-gallery-fullscreen-button {
-  display: inline-block;
+  display: none;
   font-family: fontello;
   font-size: inherit;
   text-rendering: auto;
@@ -55,19 +60,19 @@
   right: 20px;
   background: rgba(255,255,255, 0.7);
   border-radius: 3px;
-  @include respond-to("tablet", "max-width") {
-    display: none;
+  @include respond-to("tablet") {
+    display: inline-block;
   }
   &::before {
-    color: #999;
-      content: "\f0b2";
+    color: map-get($greys, "secondaryAlt");
+    content: "\f0b2";
     font-family: inherit;
     font-size: 1.5em;
     padding: 10px;
     text-shadow: none;
   }
   &:hover::before {
-    color: #999;
+    color: map-get($greys, "secondaryAlt");
   }
   &.active::before {
     content: "\e800";
@@ -99,7 +104,7 @@
   margin: 0 2px;
   opacity: 0.7;
   &.active {
-    border-color: #FFF;
+    border-color: map-get($greys, "lightest");
     opacity: 1;
   }
 }
@@ -116,13 +121,13 @@
     --rotationPrev: -45deg;
     --translateX: 0;
     --rotationNext: 0;
-    border-left: 2px solid #fff;
+    border-left: 2px solid map-get($greys, "lightest");
     transform: rotate(var(--rotationPrev)) translateX(var(--translateX)) translateY(var(--translateX));
     content: "";
     display: block;
     width: 20px;
     height: 20px;
-    border-top: 2px solid #fff;
+    border-top: 2px solid map-get($greys, "lightest");
     transition: .3s transform ease;
   }
 }
@@ -133,13 +138,13 @@
     --rotationPrev: 45deg;
     --translateX: 0;
     --rotationNext: 0;
-    border-right: 2px solid #fff;
+    border-right: 2px solid map-get($greys, "lightest");
     transform: rotate(var(--rotationPrev)) translateX(var(--translateX)) translateY(var(--translateX));
     content: "";
     display: block;
     width: 20px;
     height: 20px;
-    border-top: 2px solid #fff;
+    border-top: 2px solid map-get($greys, "lightest");
     transition: .3s transform ease;
   }
 }
