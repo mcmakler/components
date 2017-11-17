@@ -27,7 +27,8 @@
     "classnames": "^2.2.5",
     "mcmakler-components-style": "^0.0.1-beta.9",
     "prop-types": "^15.6.0",
-    "react-icons": "^2.2.7"
+    "react-icons": "^2.2.7",
+    "react-image-gallery": "^0.8.5"
   },
   "peerDependencies": {
     "react": "^15.x"
