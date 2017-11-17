@@ -1,12 +1,18 @@
 {
-  "name": "@mcmakler/mcmakler-component-style",
+  "name": "mcmakler-components-style",
   "author": "Baruch Velez <baruch.velez@mcmakler.de",
   "contributors": [
     "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
     "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
     "Burak Polat <burak.polat@mcmakler.de>"
   ],
-  "version": "0.0.1-beta.6",
+  "files": [
+    "lib",
+    "css",
+    "LICENSE",
+    "README.md"
+  ],
+  "version": "0.0.1-beta.9",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/design-guide",
   "scripts": {
@@ -16,14 +22,14 @@
     "build": "rimraf dist && gulp"
   },
   "devDependencies": {
+    "chalk": "^2.3.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
     "husky": "^0.13.4",
     "rimraf": "^2.6.2",
     "sass-lint": "^1.12.1"
   },
   "dependencies": {
     "bulma": "^0.3.1"
-  },
-  "files": [
-    "dist/**/*"
-  ]
+  }
 }
