@@ -1,7 +1,0 @@
-mixin map(title, content, address)
-    .map.map_2columns
-        h2.map__headline.text-center #{title}
-        .columns.map__columns
-            .column.map__column.map__map-container
-                iframe.map__frame(src="https://www.google.com/maps/embed/v1/place?q=" + address + "&zoom=17&key=AIzaSyDxOq77Fu6BwzxNRuiLtjM6qIQrTy22kao")
-            .column.map__column.map__address-container !{content}

@@ -3,7 +3,6 @@
 
 # NPM
 node_modules
-npm-debug.log
 
 # Build dir
 www
@@ -16,3 +15,9 @@ www
 devdist
 coverage
 .vscode
+*.log
+
+# packages
+dist/
+lib/
+es/
