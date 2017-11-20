@@ -1,0 +1,59 @@
+{
+  "name": "mcmakler-components-react",
+  "author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
+  "contributors": [
+    "Baruch Velez <baruch.velez@mcmakler.de",
+    "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
+    "Burak Polat <burak.polat@mcmakler.de>"
+  ],
+  "files": [
+    "lib",
+    "es",
+    "LICENSE",
+    "README.md"
+  ],
+  "version": "0.0.1-beta.10",
+  "license": "MIT",
+  "repository": "https://github.com/mcmakler/components/packages/react-components",
+  "description": "mcmakler-react-components",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf es/ lib/ && nwb build-react-component --no-demo --copy-files",
+    "serve": "start-storybook -p 8000 -c .storybook",
+    "lint": "eslint .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "mcmakler-components-style": "^0.0.1-beta.10",
+    "prop-types": "^15.6.0",
+    "react-icons": "^2.2.7",
+    "react-image-gallery": "^0.8.5"
+  },
+  "peerDependencies": {
+    "react": "^15.x"
+  },
+  "devDependencies": {
+    "@storybook/addon-info": "^3.2.14",
+    "@storybook/react": "^3.2.14",
+    "babel-eslint": "^8.0.1",
+    "base64-inline-loader": "^1.1.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "nwb": "0.19.x",
+    "nwb-sass": "^0.8.2",
+    "postcss-loader": "^2.0.8",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6"
+  },
+  "keywords": [
+    "mcmakler-react-components"
+  ]
+}
