@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Gallery from '../src/components/Gallery/Gallery';
+import { Gallery } from '../src';
 
 const galleryImages = [
   {

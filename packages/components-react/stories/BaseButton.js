@@ -1,6 +1,6 @@
 import React from 'react';
 import { action, storiesOf } from '@storybook/react';
-import BaseButton from '../src/components/Button/BaseButton';
+import { BaseButton } from '../src';
 
 storiesOf('BaseButton', module)
   .addWithInfo(
