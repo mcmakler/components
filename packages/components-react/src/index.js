@@ -1,13 +1,15 @@
 import BaseButton from './components/Button/BaseButton';
-import Select from './components/Select';
-import RadioButton from './components/RadioButton';
-import Textinput from './components/Textinput';
-import Textarea from './components/Textarea';
+import Gallery from './components/Gallery/Gallery';
+import RadioButton from './components/RadioButton/RadioButton';
+import Select from './components/Select/Select';
+import Textinput from './components/Textinput/Textinput';
+import Textarea from './components/Textarea/Textarea';
 
 export {
   BaseButton,
-  Select,
+  Gallery,
   RadioButton,
+  Select,
   Textinput,
   Textarea,
 };
