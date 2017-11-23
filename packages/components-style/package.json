@@ -19,12 +19,11 @@
     "lint-sass": "sass-lint -c \"$(pwd)/.sass-lint.yml\" -v -q",
     "start": "node server.js",
     "precommit": "npm run lint-sass && npm t",
-    "build": "rimraf dist && gulp"
+    "build": "rimraf dist && gulp",
+    "serve": "gulp watcher"
   },
   "devDependencies": {
-    "chalk": "^2.3.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
     "husky": "^0.13.4",
     "rimraf": "^2.6.2",
     "sass-lint": "^1.12.1"
