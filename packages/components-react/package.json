@@ -17,8 +17,11 @@
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
   "main": "lib/index.js",
+  "es": "es/lib.js",
   "scripts": {
-    "build": "rimraf es/ lib/ && nwb build-react-component --no-demo --copy-files",
+    "build:lib": "rimraf lib/ && gulp lib",
+    "build:es": "rimraf es/ && gulp es",
+    "build": "node ./scripts/build.js && npm run build:es && node ./scripts/build.js && npm run build:lib",
     "serve": "start-storybook -p 8000 -c .storybook",
     "lint": "eslint .",
     "precommit": "npm run lint"
@@ -44,6 +47,9 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-sass": "^3.1.0",
     "husky": "^0.14.3",
     "nwb": "0.19.x",
     "nwb-sass": "^0.8.2",

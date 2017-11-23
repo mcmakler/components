@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
-import './Select.scss';
 
 const Select = (props) => {
   const {
