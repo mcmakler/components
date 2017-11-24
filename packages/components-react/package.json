@@ -27,6 +27,7 @@
     "classnames": "^2.2.5",
     "mcmakler-components-style": "^0.0.1-beta.10",
     "prop-types": "^15.6.0",
+    "react-autosuggest": "^9.3.2",
     "react-icons": "^2.2.7",
     "react-image-gallery": "^0.8.5"
   },
