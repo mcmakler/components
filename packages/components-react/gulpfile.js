@@ -16,7 +16,6 @@ gulp.task('es', () => {
 
   buildJS(targetFolder);
   gulp.src('./src/**/*.scss')
-    .pipe(sass({ includePaths: ['node_modules'] }).on('error', sass.logError))
     .pipe(gulp.dest(targetFolder));
 });
 
