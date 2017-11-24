@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './BaseButton.scss';
-
 /** BaseButton component description imported from comments inside the component file */
 const BaseButton = ({ disabled, label, onClick }) => (
   <button className="button" disabled={disabled} onClick={onClick}>
