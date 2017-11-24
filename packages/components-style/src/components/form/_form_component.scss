@@ -1,11 +1,34 @@
 @import "./../../includes/greys";
+@import "./../../includes/fonts";
 
 %form-component {
+  box-sizing: border-box;
   background-color: map-get($greys, "bg");
   border: 1px solid map-get($greys, "line");
-  box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
-  color: map-get($greys, "secondaryAlt");
+  color: map-get($greys, "body");
   font-size: 15px;
+  font-family: map-get($fonts, "bodyFont");
   line-height: 1em;
   padding: 10px;
+  width: 100%;
+  &:focus {
+    box-shadow: inset 0 0 5px rgba(0,0,0,.05);
+    outline: none;
+  }
+}
+
+*::-webkit-input-placeholder {
+    color: map-get($greys, "secondaryAlt");
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: map-get($greys, "secondaryAlt");
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: map-get($greys, "secondaryAlt");
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: map-get($greys, "secondaryAlt");
 }
