@@ -1,0 +1,29 @@
+@import "./../includes/greys";
+@import "./../includes/fonts";
+
+.informationtable {
+  font-family: map-get($fonts, "bodyFont");
+  background-color: map-get($greys, "bg");
+  display: flex;
+  flex-wrap: wrap;
+
+  &__term,
+  &__data {
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    padding: 10px;
+    border-bottom: solid 1px map-get($greys, "lightest");
+  }
+
+  &__term {
+    color: map-get($greys, "secondary");
+    font-weight: bold;
+    display: block;
+  }
+
+  &__data {
+    color: map-get($greys, "body");
+    text-align: right;
+  }
+
+}
