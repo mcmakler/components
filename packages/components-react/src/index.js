@@ -4,6 +4,10 @@ import RadioButton from './components/RadioButton/RadioButton';
 import Select from './components/Select/Select';
 import Textinput from './components/Textinput/Textinput';
 import Textarea from './components/Textarea/Textarea';
+import DefinitionList from './components/DefinitionList/DefinitionList';
+import DefinitionTerm from './components/DefinitionTerm/DefinitionTerm';
+import DefinitionData from './components/DefinitionData/DefinitionData';
+
 
 export {
   BaseButton,
@@ -12,4 +16,7 @@ export {
   Select,
   Textinput,
   Textarea,
+  DefinitionList,
+  DefinitionTerm,
+  DefinitionData,
 };
