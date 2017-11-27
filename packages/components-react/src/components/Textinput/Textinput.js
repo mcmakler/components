@@ -13,6 +13,7 @@ const Textinput = (props) => {
     placeholder,
     required,
     type,
+    value,
     ...other
   } = props;
 
@@ -34,11 +35,12 @@ const Textinput = (props) => {
       {...other}
       className={styledInputClass}
       id={id}
+      type={type}
+      placeholder={placeholder}
       onChange={handleChange}
       onClick={handleClick}
-      placeholder={placeholder}
-      type={type}
       required={required}
+      value={value}
     />
   );
 };
@@ -51,7 +53,8 @@ Textinput.propTypes = {
   placeholder: PropTypes.string,
   required: PropTypes.bool,
   type: PropTypes.oneOf(['text', 'number', 'email', 'password']).isRequired,
-  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Textinput.defaultProps = {
@@ -62,6 +65,7 @@ Textinput.defaultProps = {
   placeholder: 'please provide placeholder',
   required: false,
   value: undefined,
+  defaultValue: undefined,
 };
 
 export default Textinput;

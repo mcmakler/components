@@ -13,9 +13,11 @@ storiesOf('Textinput', module)
     `,
     () => (
       <Textinput
+        className="myCustomClass"
         type="text"
         id="input_0"
         placeholder="insert Text here"
+        onChange={action('onChange')}
       />
     ),
   )
