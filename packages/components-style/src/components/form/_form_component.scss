@@ -11,24 +11,13 @@
   line-height: 1em;
   padding: 10px;
   width: 100%;
-  &:focus {
+
+  &::focus {
     box-shadow: inset 0 0 5px rgba(0,0,0,.05);
     outline: none;
   }
-}
 
-*::-webkit-input-placeholder {
+  &::placeholder {
     color: map-get($greys, "secondaryAlt");
-}
-*:-moz-placeholder {
-    /* FF 4-18 */
-    color: map-get($greys, "secondaryAlt");
-}
-*::-moz-placeholder {
-    /* FF 19+ */
-    color: map-get($greys, "secondaryAlt");
-}
-*:-ms-input-placeholder {
-    /* IE 10+ */
-    color: map-get($greys, "secondaryAlt");
+  }
 }

@@ -4,6 +4,7 @@ import RadioButton from './components/RadioButton/RadioButton';
 import Select from './components/Select/Select';
 import Textinput from './components/Textinput/Textinput';
 import Textarea from './components/Textarea/Textarea';
+import LocationPicker from './components/LocationPicker/LocationPicker';
 
 export {
   BaseButton,
@@ -12,4 +13,5 @@ export {
   Select,
   Textinput,
   Textarea,
+  LocationPicker,
 };
