@@ -1,20 +1,33 @@
-# mcm-design-components
+# McMakler Components (React)
 
-This project is mcmakler react component library.
-Component can be created in src/components with support for scss and then exported from src/index.
-Each component should have its own style.
+## Usage
 
-This also uses storybook to describe components and immediately test them, to start the app
+The package distributes _two_ folders: `nextjs` and `lib`. The `nextjs` package distributes es5 JS and CSS modules to be used in NextJS projects, we have to do this due to [this](https://github.com/zeit/next.js/issues/706) issue. The `lib` folder distributes ES6 modules with imported SCSS to be used in projects where we can run webpack loaders in the node modules.
 
-    npm run serve
+### Example Usage
 
-which will start the storybook(https://storybook.js.org/) in live serve mode
+For webpack projects
+```js
+// ...
+import { RadioButton } from 'mcmakler-components-react';
+```
 
-To make the application ready for npm publish use,
+For NextJS projects
 
-    npm run build
+*main.scss*
+```scss
+// ...
+@import "~mcmakler-components-react/nextjs/all";
+```
+Can also import individual components
 
-which generates es6/es5 module ready to be imported anywhere
+```scss
+// ...
+@import "~mcmakler-components-react/nextjs/components/RadioButton/RadioButton";
+```
 
-NOTE: Places where this component is used should support necessary loaders(SCSS etc).
-
+*component.js*
+```js
+//...
+import { RadioButton } from 'mcmakler-components-react/nextjs';
+```

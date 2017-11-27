@@ -1,4 +1,4 @@
-import BaseButton from './components/Button/BaseButton';
+import BaseButton from './components/BaseButton/BaseButton';
 import Gallery from './components/Gallery/Gallery';
 import RadioButton from './components/RadioButton/RadioButton';
 import Select from './components/Select/Select';
