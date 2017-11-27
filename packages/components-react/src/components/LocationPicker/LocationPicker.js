@@ -16,16 +16,8 @@ function renderInput(inputProps) {
     </div>
   );
 }
-
-function renderSuggestion(suggestion) {
-  return (
-    <span>{suggestion.name}</span>
-  );
-}
-
 const LocationPicker = props => (
   <Autosuggest
-    renderSuggestion={renderSuggestion}
     renderInputComponent={renderInput}
     {...props}
   />
