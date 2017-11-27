@@ -74,6 +74,13 @@ function getSuggestionValue(suggestion) {
   return suggestion.name;
 }
 
+function renderSuggestion(suggestion) {
+  return (
+    <span>{suggestion.name}</span>
+  );
+}
+
+
 class LocationPickerDemo extends React.Component {
   constructor() {
     super();
@@ -130,9 +137,11 @@ class LocationPickerDemo extends React.Component {
       className: inputClasses,
     };
 
+
     return (
       <LocationPicker
         suggestions={suggestions}
+        renderSuggestion={renderSuggestion}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
