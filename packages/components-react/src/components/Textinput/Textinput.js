@@ -17,8 +17,8 @@ const Textinput = (props) => {
   } = props;
 
   const styledInputClass = classNames(
-    'input',
     className,
+    'input',
   );
 
   const handleChange = (evt) => {

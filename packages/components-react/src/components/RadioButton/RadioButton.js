@@ -22,8 +22,8 @@ const RadioButton = (props) => {
   };
 
   const styledRadioClass = classNames(
-    'radio',
     wrapperClass,
+    'radio',
   );
 
   return (

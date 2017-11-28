@@ -16,8 +16,8 @@ const Textarea = (props) => {
   } = props;
 
   const styledTextareaClass = classNames(
-    'textarea',
     className,
+    'textarea',
   );
 
   const handleChange = (evt) => {

@@ -8,12 +8,12 @@ const DefinitionList = (props) => {
   const {
     className,
     children,
-    ...other,
+    ...other
   } = props;
 
   const listClasses = classNames(
-    'informationtable',
     className,
+    'informationtable',
   );
 
   return (

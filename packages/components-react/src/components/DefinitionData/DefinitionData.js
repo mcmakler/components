@@ -12,8 +12,8 @@ const DefinitionData = (props) => {
   } = props;
 
   const itemClasses = classNames(
-    'informationtable__data',
     className,
+    'informationtable__data',
   );
 
   return (
