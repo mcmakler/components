@@ -33,9 +33,9 @@ storiesOf('Select', module)
     `,
     () => (
       <Select
-        kind="primary"
         options={selectOptions}
         onChange={action('onChange')}
+        className="myFancyClass"
       />
     ),
   )
@@ -47,7 +47,6 @@ storiesOf('Select', module)
     () => (
       <Select
         disabled="disabled"
-        kind="primary"
         options={selectOptions}
         onChange={action('onChange')}
       />

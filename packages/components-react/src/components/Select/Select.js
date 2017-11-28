@@ -59,7 +59,7 @@ const Select = (props) => {
 
 Select.propTypes = {
   className: PropTypes.string,
-  kind: PropTypes.oneOf(['primary', 'secondary']).isRequired,
+  kind: PropTypes.oneOf(['primary', 'secondary']),
   options: PropTypes.instanceOf(Object).isRequired,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
@@ -67,6 +67,7 @@ Select.propTypes = {
 
 Select.defaultProps = {
   className: '',
+  kind: 'primary',
   onChange: () => {},
   onClick: () => {},
 };
