@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
-import './GalleryComponent.scss';
+import './Gallery.scss';
 
 const Gallery = props => (
   <ImageGallery
