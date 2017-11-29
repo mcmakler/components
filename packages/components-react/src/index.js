@@ -8,6 +8,7 @@ import LocationPicker from './components/LocationPicker/LocationPicker';
 import DefinitionList from './components/DefinitionList/DefinitionList';
 import DefinitionTerm from './components/DefinitionTerm/DefinitionTerm';
 import DefinitionData from './components/DefinitionData/DefinitionData';
+import { Timeline, TimelineHeader, TimelineContainer, TimelineLine, TimelineItems, TimelineItem  } from './components/Timeline/Timeline';
 
 
 export {
@@ -21,4 +22,10 @@ export {
   DefinitionList,
   DefinitionTerm,
   DefinitionData,
+  Timeline,
+  TimelineHeader,
+  TimelineContainer,
+  TimelineLine,
+  TimelineItems,
+  TimelineItem,
 };
