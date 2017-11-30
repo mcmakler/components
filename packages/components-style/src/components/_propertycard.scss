@@ -85,6 +85,7 @@
 
     .bottom-content {
       display: flex;
+      align-items: center;
       width: 100%;
       margin: 30px 0;
       line-height: 2em;
@@ -97,7 +98,6 @@
       }
 
       .size-info {
-        line-height: 2em;
         display: flex;
         flex: 1;
         text-align: right;
@@ -113,6 +113,12 @@
           border-left: 1px solid map-get($greys, "secondaryAlt");
           padding-left: 9px;
           text-align: right;
+
+          sup {
+            vertical-align: baseline;
+            position: relative;
+            top: -0.4em;
+          }
         }
       }
     }
