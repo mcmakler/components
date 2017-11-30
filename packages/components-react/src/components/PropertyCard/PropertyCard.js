@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './PropertyCard.scss';
+import PropertyCardImg from './PropertyCardImg';
 
 const PropertyCard = (props) => {
   const { advertisement } = props;
@@ -11,7 +13,8 @@ const PropertyCard = (props) => {
 
   const {
     imagePath,
-    ctaType,
+    purpose,
+    alttext,
     title,
     address,
     price,
@@ -21,16 +24,13 @@ const PropertyCard = (props) => {
 
   return (
     <div className="property-card">
-      <div className="property-card__image-wrapper">
-        <img
-          className="property-card__image"
-          src={imagePath}
-          alt=""
-        />
-        <div className="property-card__cta">{ctaType}</div>
-      </div>
+      <PropertyCardImg
+        src={imagePath}
+        alt={alttext}
+        puprose={purpose}
+      />
       <div className="property-card__content">
-        <div className="title">
+        <div className="property-card__title">
           {title}
         </div>
         <div className="address">

@@ -4,7 +4,8 @@ import { PropertyCard } from '../src';
 
 const advertisementData = {
   imagePath: 'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.5908c4916a1ca6.30802316.jpg',
-  ctaType: 'Buy',
+  purpose: 'Buy',
+  alttext: 'Sonnenbalkon in Friedrichshain',
   title: 'Elf Wohnungen auf einmal – 5% Mietrendite! MFH in Ettlingen',
   address: {
     street: 'Torstr.',
