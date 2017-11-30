@@ -2,33 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import './Timeline.scss';
-
-const Timeline = (props) => {
+const TimelineContainer = (props) => {
   const {
     children,
     className,
   } = props;
 
-  const timelineClasses = classNames(
+  const timelinecontainerClasses = classNames(
     className,
-    'timeline',
+    'timeline__content',
   );
 
+
   return (
-    <section className={timelineClasses}>
+    <div className={timelinecontainerClasses}>
       {children}
-    </section>
+    </div>
   );
 };
 
-Timeline.propTypes = {
+TimelineContainer.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
-Timeline.defaultProps = {
+TimelineContainer.defaultProps = {
   className: '',
 };
 
-export default Timeline;
+export default TimelineContainer;
