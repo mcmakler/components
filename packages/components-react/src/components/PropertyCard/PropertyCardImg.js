@@ -7,6 +7,7 @@ const PropertyCardImg = (props) => {
   const {
     src,
     purpose,
+    hoverText,
     alt,
     className,
   } = props;
@@ -27,6 +28,9 @@ const PropertyCardImg = (props) => {
         <span className="property-card__label">
           {purpose}
         </span>
+        <p className="property-card__hover-text">
+          {hoverText}
+        </p>
       </figcaption>
     </figure>
   );
@@ -35,6 +39,7 @@ const PropertyCardImg = (props) => {
 PropertyCardImg.propTypes = {
   src: PropTypes.string,
   purpose: PropTypes.string,
+  hoverText: PropTypes.string,
   alt: PropTypes.string,
   className: PropTypes.string,
 };
@@ -42,6 +47,7 @@ PropertyCardImg.propTypes = {
 PropertyCardImg.defaultProps = {
   src: '',
   purpose: '',
+  hoverText: '',
   alt: '',
   className: '',
 };

@@ -14,43 +14,48 @@ const PropertyCard = (props) => {
   const {
     imagePath,
     purpose,
-    alttext,
+    hoverText,
+    altText,
     title,
     address,
     price,
     numberOfRooms,
     space,
+    target,
   } = advertisement;
 
   return (
     <div className="property-card">
-      <PropertyCardImg
-        src={imagePath}
-        alt={alttext}
-        puprose={purpose}
-      />
-      <div className="property-card__content">
-        <div className="property-card__title">
-          {title}
-        </div>
-        <div className="address">
-          {address.postalCode} {address.street} / {address.city}
-        </div>
-        <div className="bottom-content">
-          <div className="price">
-            {price} €
+      <a href={target}>
+        <PropertyCardImg
+          src={imagePath}
+          alt={altText}
+          purpose={purpose}
+          hoverText={hoverText}
+        />
+        <div className="property-card__content">
+          <div className="title">
+            {title}
           </div>
-          <div className="size-info">
-            <span className="room">
-              {`${numberOfRooms} Zimmer`}
-            </span>
-            <span className="space">
-              <span>{parseInt(space, 10)}</span>
-              <span> m</span><sup>2</sup>
-            </span>
+          <div className="address">
+            {address.postalCode} {address.street} / {address.city}
+          </div>
+          <div className="bottom-content">
+            <div className="price">
+              {price.toLocaleString('de-DE')} €
+            </div>
+            <div className="size-info">
+              <span className="room">
+                {`${numberOfRooms} Zimmer`}
+              </span>
+              <span className="space">
+                <span>{parseInt(space, 10)}</span>
+                <span> m</span><sup>2</sup>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 };

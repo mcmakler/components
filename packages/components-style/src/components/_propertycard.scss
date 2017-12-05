@@ -3,84 +3,108 @@
 @import "./../links";
 
 .property-card {
+  display: flex;
   color: map-get($greys, "darkest");
   font-family: map-get($fonts, "bodyFont");
-
-  border: 1px solid map-get($greys, "line");
-  margin-bottom: 30px;
+  border-bottom: 1px solid map-get($greys, "line");
+  margin: ($grid-spacing / 2) $grid-spacing;
   max-width: 360px;
   transition: all 0.5s ease;
+  @include respond-to('tablet') {
+    border: 1px solid map-get($greys, "line");
 
-  @include respond-to('tablet_landscape') {
     &:hover {
       box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.15);
+      .property-card__image {
+        filter: blur(2px);
+      }
+      .property-card__label {
+        display: none;
+      }
+      .property-card__hover-text {
+        display: block;
+      }
+      .property-card__figure figcaption {
+        background: rgba(0,0,0,.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   &__figure {
     position: relative;
     overflow: hidden;
     max-width: 100%;
-    height: 255px;
+    height: 240px;
     margin: 0;
     margin-bottom: 25px;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 0;
+    figcaption {
+      transition: all 0.5s ease;
       width: 100%;
       height: 100%;
-      transform: translateX(-100%);
-      transition: 0.3s transform ease;
-      background-color: rgba(white, 0.15);
-      pointer-events: none;
-      will-change: transform;
-    }
-
-    &:hover::after {
-      transform: none;
+      position: absolute;
+      top: 0;
     }
   }
 
   &__image {
     display: block;
+    max-width: 100%;
+    height: 100%;
   }
 
   &__label {
     background-color: map-get($greys, "lightest");
     border: solid 1px map-get($greys, "line");
     border-radius: 2px;
-    color: map-get($greys, "darkest");
+    color: map-get($greys, "secondary");
     display: inline-block;
-    font-size: 16px;
+    font-size: 13px;
+    font-weight: 500;
     padding: 10px;
-    position: absolute;
-    top: 2em;
-    left: 1em;
+    margin: 2em 1em;
+  }
+
+  &__hover-text {
+    display: none;
+    color: map-get($greys, "lightest");
+    font-size: 15px;
+    font-weight: 500;
+    margin: 2em 1em;
   }
 
   &__content {
-    padding: 0 ($grid-spacing * 2);
+    @include respond-to('tablet') {
+      padding: 0 ($grid-spacing * 2);
+    }
 
     .title {
-      padding: 5px 0;
       display: -webkit-box;
-      height: 46px;
+      height: 42px;
       margin: 0 auto;
       line-height: 20px;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: map-get($greys, "darkest");
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
     }
 
     .address {
-      padding: 5px 0;
-      font-size: 12px;
+      margin-top: $grid-spacing;
+      font-size: 13px;
       font-weight: 500;
+      color: map-get($greys, "secondary");
+      font-family: Roboto, sans-serif;
     }
 
     .bottom-content {
@@ -90,26 +114,31 @@
       margin: 30px 0;
       line-height: 2em;
       font-size: 14px;
-
+      @include respond-to('tablet') {
+        margin: 40px 0;
+      }
       .price {
         display: flex;
         flex: 1;
+        font-size: 16px;
         font-weight: 500;
+        color: map-get($greys, "darkest");
       }
 
       .size-info {
         display: flex;
+        justify-content: flex-end;
         flex: 1;
-        text-align: right;
         font-weight: 300;
+        color: map-get($greys, "body");
+        font-size: 15px;
+        font-family: Roboto, sans-serif;
 
         .room {
           padding-right: 10px;
-          display: inline-block;
         }
 
         .space {
-          display: inline-block;
           border-left: 1px solid map-get($greys, "secondaryAlt");
           padding-left: 9px;
           text-align: right;
