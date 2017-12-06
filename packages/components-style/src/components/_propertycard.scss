@@ -119,7 +119,6 @@
       }
       .price {
         display: flex;
-        flex: 1;
         font-size: 16px;
         font-weight: 500;
         color: map-get($greys, "darkest");
@@ -135,12 +134,12 @@
         font-family: Roboto, sans-serif;
 
         .room {
-          padding-right: 10px;
+          padding-right: 18px;
         }
 
         .space {
           border-left: 1px solid map-get($greys, "line");
-          padding-left: 9px;
+          padding-left: 11px;
           text-align: right;
 
           sup {
