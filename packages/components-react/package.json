@@ -15,8 +15,8 @@
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
-  "main": "lib/dist/index.js",
-  "nextjs": "lib/nextjs/index.js",
+  "main": "dist/lib/index.js",
+  "nextjs": "dist/nextjs/index.js",
   "scripts": {
     "build": "rimraf es/ lib/ && node ./scripts/build.js && gulp nextjs && node ./scripts/build.js && gulp lib",
     "serve": "start-storybook -p 8000 -c .storybook",
