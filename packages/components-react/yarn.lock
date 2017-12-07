@@ -4326,7 +4326,7 @@ math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
 
-mcmakler-components-style@^0.0.1-beta.10:
+mcmakler-components-style@^0.0.1-alpha.1:
   version "0.0.1-beta.10"
   resolved "https://registry.yarnpkg.com/mcmakler-components-style/-/mcmakler-components-style-0.0.1-beta.10.tgz#5c652df509e7b913e5e99fc644fce983937f0832"
   dependencies:

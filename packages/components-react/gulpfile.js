@@ -12,7 +12,7 @@ function buildJS(target, babelPresets = []) {
 }
 
 gulp.task('lib', () => {
-  const targetFolder = 'lib';
+  const targetFolder = 'dist/lib';
 
   buildJS(targetFolder);
   gulp.src('./src/**/*.scss')
@@ -20,7 +20,7 @@ gulp.task('lib', () => {
 });
 
 gulp.task('nextjs', () => {
-  const targetFolder = 'nextjs';
+  const targetFolder = 'dist/nextjs';
 
   buildJS(targetFolder, ['env']);
   gulp.src('./src/**/*.scss')
