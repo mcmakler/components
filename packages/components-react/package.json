@@ -7,8 +7,7 @@
     "Burak Polat <burak.polat@mcmakler.de>"
   ],
   "files": [
-    "lib",
-    "nextjs",
+    "dist",
     "LICENSE",
     "README.md"
   ],
@@ -16,8 +15,8 @@
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
-  "main": "lib/index.js",
-  "nextjs": "nextjs/index.js",
+  "main": "dist/lib/index.js",
+  "nextjs": "dist/nextjs/index.js",
   "scripts": {
     "build:script": "node ./scripts/build.js",
     "build:nextjs": "yarn build:script && gulp nextjs",
