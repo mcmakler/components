@@ -1659,10 +1659,6 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
-bulma@^0.3.1:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.3.2.tgz#2c1fa6adaf2a31f47a142c11856f2db27bc638c9"
-
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -4325,12 +4321,6 @@ marksy@^2.0.0:
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
-
-mcmakler-components-style@^0.0.1-alpha.1:
-  version "0.0.1-beta.10"
-  resolved "https://registry.yarnpkg.com/mcmakler-components-style/-/mcmakler-components-style-0.0.1-beta.10.tgz#5c652df509e7b913e5e99fc644fce983937f0832"
-  dependencies:
-    bulma "^0.3.1"
 
 md5.js@^1.3.4:
   version "1.3.4"
