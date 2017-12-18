@@ -12,7 +12,7 @@ function buildJS(target, babelPresets = []) {
 }
 
 gulp.task('lib', () => {
-  const targetFolder = 'lib';
+  const targetFolder = 'dist/lib';
 
   buildJS(targetFolder);
   gulp.src('./src/**/*.scss')
@@ -20,10 +20,11 @@ gulp.task('lib', () => {
 });
 
 gulp.task('nextjs', () => {
-  const targetFolder = 'nextjs';
+  const targetFolder = 'dist/nextjs';
+  const { logError } = sass;
 
   buildJS(targetFolder, ['env']);
   gulp.src('./src/**/*.scss')
-    .pipe(sass({ includePaths: ['node_modules'] }).on('error', sass.logError))
+    .pipe(sass({ includePaths: ['node_modules'] }).on('error', logError))
     .pipe(gulp.dest(targetFolder));
 });
