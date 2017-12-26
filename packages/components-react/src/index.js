@@ -9,11 +9,6 @@ import DefinitionList from './components/DefinitionList/DefinitionList';
 import DefinitionTerm from './components/DefinitionTerm/DefinitionTerm';
 import DefinitionData from './components/DefinitionData/DefinitionData';
 import Timeline from './components/Timeline/Timeline';
-import TimelineHeader from './components/Timeline/TimelineHeader';
-import TimelineContainer from './components/Timeline/TimelineContainer';
-import TimelineItems from './components/Timeline/TimelineItems';
-import TimelineItem from './components/Timeline/TimelineItem';
-import TimelineLine from './components/Timeline/TimelineLine';
 
 
 export {
@@ -28,9 +23,4 @@ export {
   DefinitionTerm,
   DefinitionData,
   Timeline,
-  TimelineHeader,
-  TimelineContainer,
-  TimelineItems,
-  TimelineItem,
-  TimelineLine,
 };
