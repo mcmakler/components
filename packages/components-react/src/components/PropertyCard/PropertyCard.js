@@ -7,10 +7,6 @@ import PropertyCardImg from './PropertyCardImg';
 const PropertyCard = (props) => {
   const { advertisement } = props;
 
-  if (!advertisement) {
-    return null;
-  }
-
   const {
     imagePath,
     purpose,
