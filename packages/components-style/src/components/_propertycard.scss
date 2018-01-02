@@ -1,0 +1,153 @@
+@import "./../variables";
+@import "./../mixins/respond-to";
+@import "./../links";
+
+.property-card {
+  display: flex;
+  color: map-get($greys, "darkest");
+  font-family: map-get($fonts, "bodyFont");
+  border-bottom: 1px solid map-get($greys, "line");
+  margin: ($grid-spacing / 2) $grid-spacing;
+  max-width: 360px;
+  transition: all 0.5s ease;
+  @include respond-to('tablet') {
+    border: 1px solid map-get($greys, "line");
+
+    &:hover {
+      box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.15);
+      .property-card__image {
+        filter: blur(2px);
+      }
+      .property-card__label {
+        display: none;
+      }
+      .property-card__hover-text {
+        display: block;
+      }
+      .property-card__figure figcaption {
+        background: rgba(0,0,0,.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__figure {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 240px;
+    margin: 0;
+    margin-bottom: 25px;
+
+    figcaption {
+      transition: all 0.5s ease;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  &__label {
+    background-color: map-get($greys, "lightest");
+    border: solid 1px map-get($greys, "line");
+    border-radius: 2px;
+    color: map-get($greys, "secondary");
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px;
+    margin: 2em 1em;
+  }
+
+  &__hover-text {
+    display: none;
+    color: map-get($greys, "lightest");
+    font-size: 15px;
+    font-weight: 500;
+    margin: 2em 1em;
+  }
+
+  &__content {
+    @include respond-to('tablet') {
+      padding: 0 ($grid-spacing * 2);
+    }
+
+    .title {
+      display: -webkit-box;
+      height: 42px;
+      margin: 0 auto;
+      line-height: 22px;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: map-get($greys, "darkest");
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+    }
+
+    .address {
+      margin-top: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      color: map-get($greys, "secondary");
+      font-family: Roboto, sans-serif;
+    }
+
+    .bottom-content {
+      display: flex;
+      align-items: center;
+      margin: 30px 0;
+      line-height: 2em;
+      font-size: 14px;
+      @include respond-to('tablet') {
+        margin: 40px 0;
+      }
+      .price {
+        display: flex;
+        font-size: 16px;
+        font-weight: 500;
+        color: map-get($greys, "darkest");
+      }
+
+      .size-info {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        font-weight: 300;
+        color: map-get($greys, "body");
+        font-size: 15px;
+        font-family: Roboto, sans-serif;
+
+        .room {
+          padding-right: 18px;
+        }
+
+        .space {
+          border-left: 1px solid map-get($greys, "line");
+          padding-left: 11px;
+          text-align: right;
+
+          sup {
+            vertical-align: baseline;
+            position: relative;
+            top: -0.4em;
+          }
+        }
+      }
+    }
+  }
+}

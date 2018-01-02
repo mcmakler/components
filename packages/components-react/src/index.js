@@ -8,6 +8,7 @@ import LocationPicker from './components/LocationPicker/LocationPicker';
 import DefinitionList from './components/DefinitionList/DefinitionList';
 import DefinitionTerm from './components/DefinitionTerm/DefinitionTerm';
 import DefinitionData from './components/DefinitionData/DefinitionData';
+import PropertyCard from './components/PropertyCard/PropertyCard';
 
 
 export {
@@ -21,4 +22,5 @@ export {
   DefinitionList,
   DefinitionTerm,
   DefinitionData,
+  PropertyCard,
 };
