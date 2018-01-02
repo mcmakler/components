@@ -1,4 +1,4 @@
-# McMakler living Design System
+# McMakler Living Design System
 
 ----
 ## Getting started

@@ -18,7 +18,10 @@
   "main": "dist/lib/index.js",
   "nextjs": "dist/nextjs/index.js",
   "scripts": {
-    "build": "rimraf es/ lib/ && node ./scripts/build.js && gulp nextjs && node ./scripts/build.js && gulp lib",
+    "build:script": "node ./scripts/build.js",
+    "build:nextjs": "yarn build:script && gulp nextjs",
+    "build:lib": "yarn build:script && gulp lib",
+    "build": "rimraf nextjs/ lib/ && yarn build:nextjs && yarn build:lib",
     "serve": "start-storybook -p 8000 -c .storybook",
     "lint": "eslint .",
     "precommit": "npm run lint"
