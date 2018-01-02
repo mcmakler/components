@@ -1,0 +1,148 @@
+@import "./../../variables";
+@import "./../../mixins/respond-to";
+
+.timeline {
+  font-family: map-get($fonts, "bodyFont");
+
+  &__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: $grid-spacing;
+
+  @include respond-to('tablet_landscape') {
+    padding-top: 100px;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+    height: 13px;
+    border-radius: 0px;
+    background-color: map-get($greys, "bg");
+  }
+
+  &::-webkit-scrollbar-button:hover {
+    background-color: map-get($greys, "bg");
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($greys, "line");
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: map-get($greys, "bg");
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: map-get($greys, "bg");
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    -webkit-appearance: none;
+  }
+}
+
+  &__items {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: $grid-spacing;
+    overflow-x: visible;
+    scroll-behavior: unset;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  &__item {
+    align-items: flex-start;
+    counter-increment: timeline-counter;
+    display: flex;
+    flex: 1 0 calc(100% - #{$grid-spacing * 4});
+    flex-direction: column;
+    justify-content: center;
+    max-width: 366px;
+    width: 90%;
+  }
+
+  &__image {
+    margin-bottom: $grid-spacing;
+  }
+
+  &__heading {
+    margin: 0;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.471;
+  }
+
+  &__subheading {
+    margin: 0;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    line-height: 1.462;
+    color: map-get($greys, "secondary");
+  }
+
+  &__line {
+    box-sizing: content-box;
+    overflow: visible;
+    position: relative;
+    display: block;
+    margin: $grid-spacing 0;
+    width: calc(100% + #{$grid-spacing * 1.5});
+    height: 2px;
+    border: 0;
+    background-color: map-get($greys, "line");
+  }
+
+  &__line::before {
+    background-color: map-get($greys, "lightest");
+    border: 2px solid map-get($greys, "line");
+    border-radius: 50%;
+    color: map-get($greys, "line");
+    content: counter(timeline-counter);
+    display: block;
+    font-weight: 500;
+    left: 0;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: 30px;
+  }
+
+  &__line_end {
+    width: 15px;
+  }
+
+  &__item + &__item {
+    margin-left: $grid-spacing * 1.5;
+  }
+
+  .timelineheader {
+    text-align: center;
+
+    &__headline {
+      font-family: map-get($fonts, "headingFont");
+      font-size: 22px;
+      font-weight: 400;
+      @include respond-to('tablet'){
+        font-size: 28px;
+      }
+    }
+
+    &__claim {
+      font-family: map-get($fonts, "bodyFont");
+      font-size: 18px;
+      font-weight: 300;
+      @include respond-to('tablet'){
+        font-size: 22px;
+      }
+    }
+  }
+}
