@@ -7,12 +7,11 @@
     "Burak Polat <burak.polat@mcmakler.de>"
   ],
   "files": [
-    "lib",
-    "nextjs",
+    "dist",
     "LICENSE",
     "README.md"
   ],
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
