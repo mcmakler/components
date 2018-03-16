@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './RadioGroup.scss';
 
 import RadioButton from './../RadioButton/RadioButton';
 
-const RadioGroup = ({ buttons, onChange }) => (
-  <div>
+const RadioGroup = ({ id, buttons, onChange }) => (
+  <div className="radio_group">
     {
       buttons.map((button, index) => (
         <RadioButton
           {...button}
-          id={`radio_${index}`}
+          id={`radio_${id}_${index}`}
+          name={`radio_${id}`}
           onChange={onChange}
         />
       ))
@@ -20,6 +22,11 @@ const RadioGroup = ({ buttons, onChange }) => (
 RadioGroup.propTypes = {
   buttons: PropTypes.instanceOf(Array).isRequired,
   onChange: PropTypes.func.isRequired,
+  id: PropTypes.string,
+};
+
+RadioGroup.defaultProps = {
+  id: '0',
 };
 
 export default RadioGroup;
