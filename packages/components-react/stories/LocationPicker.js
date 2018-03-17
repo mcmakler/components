@@ -91,23 +91,23 @@ class LocationPickerDemo extends React.Component {
     };
   }
 
-  onChange = (event, { newValue }) => {
+  onChange(event, { newValue }) {
     this.setState({
       value: newValue,
     });
-  };
+  }
 
-  onSuggestionsFetchRequested = ({ value }) => {
+  onSuggestionsFetchRequested({ value }) {
     this.setState({
       suggestions: this.getSuggestions(value),
     });
-  };
+  }
 
-  onSuggestionsClearRequested = () => {
+  onSuggestionsClearRequested() {
     this.setState({
       suggestions: [],
     });
-  };
+  }
 
   getSuggestions(value) {
     const escapedValue = escapeRegexCharacters(value.trim());
