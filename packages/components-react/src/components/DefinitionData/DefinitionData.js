@@ -7,7 +7,7 @@ import './DefinitionData.scss';
 const DefinitionData = (props) => {
   const {
     className,
-    children,
+    label,
     ...other
   } = props;
 
@@ -18,19 +18,18 @@ const DefinitionData = (props) => {
 
   return (
     <dd className={itemClasses} {...other}>
-      {children}
+      {label}
     </dd>
   );
 };
 
 
 DefinitionData.propTypes = {
-  children: PropTypes.node,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   className: PropTypes.string,
 };
 
 DefinitionData.defaultProps = {
-  children: undefined,
   className: '',
 };
 

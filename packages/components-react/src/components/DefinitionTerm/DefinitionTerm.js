@@ -7,7 +7,7 @@ import './DefinitionTerm.scss';
 const DefinitionTerm = (props) => {
   const {
     className,
-    children,
+    label,
     ...other
   } = props;
 
@@ -18,19 +18,18 @@ const DefinitionTerm = (props) => {
 
   return (
     <dt className={itemClasses} {...other}>
-      {children}
+      {label}
     </dt>
   );
 };
 
 
 DefinitionTerm.propTypes = {
-  children: PropTypes.node,
+  label: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 
 DefinitionTerm.defaultProps = {
-  children: undefined,
   className: '',
 };
 
