@@ -1,21 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders 1`] = `
+exports[`Correctly renders. 1`] = `
 <button
   className="button"
   disabled={false}
   onClick={[Function]}
 >
-  test
-</button>
-`;
-
-exports[`should be disabled 1`] = `
-<button
-  className="button"
-  disabled={true}
-  onClick={[Function]}
->
-  test
+  Render Test
 </button>
 `;
