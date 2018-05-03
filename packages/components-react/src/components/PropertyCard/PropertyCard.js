@@ -42,7 +42,7 @@ const PropertyCard = (props) => {
             </div>
             <div className="size-info">
               <span className="room">
-                {`${numberOfRooms} Zimmer`}
+                { numberOfRooms && `${numberOfRooms} Zimmer`}
               </span>
               <span className="space">
                 <span>{parseInt(space, 10)}</span>
