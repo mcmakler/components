@@ -11,7 +11,7 @@
     "LICENSE",
     "README.md"
   ],
-  "version": "0.0.1-alpha.6",
+  "version": "0.0.1-alpha.7",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "mcmakler-components-style": "^0.0.1-alpha.6",
+    "mcmakler-components-style": "^0.0.1-alpha.7",
     "prop-types": "^15.6.0",
     "react-autosuggest": "^9.3.2",
     "react-icons": "^2.2.7",
