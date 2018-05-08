@@ -38,7 +38,11 @@ const PropertyCard = (props) => {
           </div>
           <div className="bottom-content">
             <div className="price">
-              {price.toLocaleString('de-DE')} €
+              {
+                typeof price === 'number' ?
+                `${price.toLocaleString('de-DE')} €` :
+                price
+              }
             </div>
             <div className="size-info">
               <span className="room">
