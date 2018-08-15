@@ -1,0 +1,220 @@
+&__menu {
+  position: fixed;
+  top: var(--header__height);
+  left: 0;
+  margin: 0;
+  height: calc(100% - var(--header__height));
+  width: var(--burger__menu-width);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  transform: translateX(-100vw);
+  transition: 0.3s transform ease;
+  background: white;
+}
+
+&__menu_active {
+  transform: none;
+  overflow-y: scroll;
+}
+
+&__menu-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid map-get($greys, "line");
+  min-height: 50px; // Design spec.
+  @include respond-to('tablet_landscape') {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+&__menu-item_separator {
+  display: none;
+}
+
+&__menu-item_active > a,
+&__menu-child_active > a {
+  border-left: 2px solid map-get($colors, "primary");
+  @include respond-to('tablet_landscape') {
+    border-left: 0;
+  }
+}
+
+&__menu-item_has-children {
+  display: table;
+  width: 100%;
+}
+
+&__menu-item_has-children::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: $grid-spacing;
+  width: 4px;
+  height: 4px;
+  border-top: 2px solid map-get($greys, 'secondary');
+  border-right: 2px solid map-get($greys, 'secondary');
+  transform: translateY(-50%) rotate(135deg);
+  transition: transform 0.3s ease;
+  @include respond-to('tablet_landscape') {
+    transform: none;
+  }
+}
+
+&__menu-item_has-children_expanded::after {
+  transform: translateY(-50%) rotate(var(--rotation, -45deg));
+}
+
+&__menu-link {
+  color: map-get($greys, 'body');
+  display: block;
+  width: 100%;
+  padding: ($grid-spacing / 2) $grid-spacing;
+}
+
+&__menu-children {
+  display: none;
+  padding: 0;
+  list-style-type: none;
+  background: map-get($greys, 'bg');
+  box-shadow: inset 0 11px 18px -8px map-get($greys, 'secondary'), inset 0 -8px 8px -8px map-get($greys, 'line');
+}
+
+&__menu-item_has-children_expanded > &__menu-children {
+  display: block;
+  overflow-y: scroll;
+}
+
+&__menu-child + &__menu-child {
+  border-top: 1px solid map-get($greys, 'line');
+}
+@include respond-to('tablet_landscape') {
+  &__menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
+    transform: none;
+  }
+
+  &__menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include respond-to('desktop') {
+      padding-left: $grid-spacing;
+      padding-right: $grid-spacing;
+    }
+
+    &:hover {
+      background-color: map-get($greys, 'bg');
+    }
+  }
+
+  &__menu-item_has-children {
+    display: flex;
+    width: auto;
+  }
+
+  &__menu-item_separator {
+    display: flex;
+
+    &:hover {
+      background-color: map-get($greys, 'lightest');
+    }
+  }
+
+  &__menu-link {
+    width: auto;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  &__menu-item_active {
+    box-shadow: none;
+  }
+
+  &__menu-item_active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: map-get($colors, 'primary');
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: 0.6s 0.15s extend ease forwards;
+  }
+
+  &__menu-item_has-children:hover {
+    cursor: pointer;
+    background-color: map-get($greys, 'bg');
+
+    & > .header__menu-children {
+      display: block;
+    }
+  }
+
+  .header__menu-children {
+    border-top: 2px solid map-get($colors, "primary");
+    background-color: map-get($greys, "lightest");
+    box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    position: absolute;
+    top: 77px;
+    left: 0;
+    padding: $grid-spacing 0;
+    overflow: visible;
+    min-width: 230px;
+
+    & > .header__menu-child {
+      border: 0;
+      color: #343434;
+      font-family: Roboto, sans-serif;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 50px;
+      text-decoration: none;
+      padding: 0 $grid-spacing;
+      justify-content: flex-start;
+
+      &:hover {
+        cursor: pointer;
+        background-color: map-get($greys, 'bg');
+      }
+
+      &_active {
+        background-color: map-get($greys, 'bg');
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &__menu-item_has-children_expanded > &__menu-children {
+    display: none;
+  }
+
+  &__menu-item:last-of-type > &__separator {
+    display: none;
+  }
+
+  &__menu-item_has-children::after,
+  &__menu-item_has-children_expanded::after {
+    top: auto;
+    border: 0;
+    transform: none;
+  }
+}

@@ -10,6 +10,9 @@ import RadioGroup from './components/RadioGroup/RadioGroup';
 import Select from './components/Select/Select';
 import Textinput from './components/Textinput/Textinput';
 import Textarea from './components/Textarea/Textarea';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import PreFooter from './components/PreFooter';
 
 
 export {
@@ -25,4 +28,7 @@ export {
   Select,
   Textinput,
   Textarea,
+  Header,
+  Footer,
+  PreFooter,
 };
