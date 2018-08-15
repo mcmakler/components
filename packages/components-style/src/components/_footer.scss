@@ -1,0 +1,315 @@
+@import "./../mixins/respond-to";
+@import "./../variables";
+@import "./../typography";
+@import "../grid";
+
+.list_inline {
+  padding: 0;
+  display: flex;
+
+  .list_inline__list-item + .list_inline__list-item {
+    margin-left: $grid-spacing;
+  }
+}
+
+
+.footer {
+  .show-on-tablet {
+    display: none;
+    @include respond-to("tablet") {
+      display: block;
+    }
+  }
+  
+  .hide-on-tablet {
+    @include respond-to("tablet") {
+      display: none;
+    }
+  }
+
+  padding-top: $grid-spacing * 2;
+  background-color: map-get($greys, "darkest");
+  text-align: left;
+
+  .social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &__icon {
+      margin: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      background-color: map-get($greys, 'body');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px
+    }
+  }
+
+  .is-marginless {
+    margin: 0 !important;
+  }
+
+  .is-paddingless {
+    padding: 0 !important;
+  }
+
+  a:link,
+  a:visited {
+    color: map-get($greys, "secondaryAlt");
+    text-decoration: none;
+
+    &.footer__card-link {
+      color: map-get($greys, "lightest");
+    }
+  }
+
+  &.footer--light {
+    background-color: map-get($greys, "body");
+    padding-top: 0;
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:focus {
+      color: map-get($greys, "lightest");
+    }
+  }
+
+  &__card {
+    color: map-get($greys, "lightest");
+    border: solid 1px map-get($greys, "body");
+    position: relative;
+    text-align: center;
+    padding: 0 $grid-spacing ($grid-spacing * 2);
+    margin: ($grid-spacing / 2);
+    @include respond-to("tablet") {
+      padding-bottom: $grid-spacing;
+    }
+    @include respond-to("desktop") {
+      text-align: left;
+    }
+
+    &__header {
+      width: min-content;
+      margin: -10px auto 10px;
+
+      &-text {
+        display: inline-block;
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: map-get($greys, "darkest");
+        font-size: 17px;
+      }
+    }
+
+    .fineprint {
+      display: block;
+    }
+
+    &__contact {
+      text-align: left;
+      margin-bottom: $grid-spacing;
+    }
+
+    &__badges {
+      @include respond-to("tablet") {
+        padding: $grid-spacing 0;
+      }
+    }
+
+    &-badge {
+      margin-bottom: $grid-spacing;
+      @include respond-to("tablet") {
+        margin-bottom: 0;
+        padding: 0 ($grid-spacing / 2 );
+      }
+    }
+  }
+
+  .ekomi-badge {
+    @include respond-to("tablet") {
+      width: 80px;
+    }
+  }
+
+  &__icon {
+    fill: map-get($greys, "secondaryAlt");
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    margin-right: 1em;
+    @include respond-to("tablet") {
+      margin-right: 0;
+    }
+    @include respond-to("desktop") {
+      margin-right: 10px;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.667;
+    color: map-get($greys, "secondary");
+    padding: $grid-spacing;
+    @include respond-to("desktop") {
+      text-align: left;
+      padding-left: $grid-spacing;
+    }
+  }
+
+  &__imprint {
+    border-top: 1px solid map-get($greys, "body");
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .column {
+      margin: 0;
+    }
+    @include respond-to("tablet") {
+      flex-direction: row;
+      .column {
+        margin: 32px 0;
+      }
+    }
+  }
+
+  &__last-links {
+    justify-content: center;
+    margin: 0;
+    @include respond-to("tablet") {
+      justify-content: flex-start;
+    }
+  }
+
+  &__all-rights-reserved {
+    text-align: center;
+    @include respond-to("tablet") {
+      text-align: right;
+    }
+  }
+
+  &__menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__menu-item {
+    display: block;
+    padding: ($grid-spacing/2) 0;
+    font-weight: lighter;
+  }
+
+  &__menu--centered {
+    text-align: center;
+  }
+}
+
+.footer__menu--responsive {
+  .footer__menu-radio {
+    display: none;
+  }
+
+  .footer__menu-list {
+    border-bottom: solid 1px map-get($greys, "secondaryAlt");
+    position: relative;
+    @include respond-to("tablet") {
+      border-bottom: 0;
+
+      &::after {
+        content: "";
+        height: 80%;
+        display: block;
+        position: absolute;
+        top: 10%;
+        right: 20%;
+        border-right: solid 1px #999;
+      }
+    }
+
+    &.footer__menu-last {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .footer__menu-radio + .footer__menu-label {
+    > .footer__menu-list {
+      height: 0;
+      overflow: hidden;
+      transition: 0.6s opacity ease, 0.3s transform ease;
+      will-change: opacity, transform;
+      transform: translateY(20px);
+      opacity: 0;
+      @include respond-to("tablet") {
+        height: auto;
+        opacity: 1;
+        transform: none;
+        padding: $grid-spacing;
+      }
+    }
+  }
+
+  .footer__header {
+    color: map-get($greys, "lightest");
+    border-bottom: solid 1px map-get($greys, "secondaryAlt");
+    font-size: 17px;
+    font-weight: normal;
+    padding: $grid-spacing;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 40px;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid map-get($greys, "secondaryAlt");
+      border-right: 2px solid map-get($greys, "secondaryAlt");
+      transform: rotate(135deg) translateY(-50%);
+    }
+    @include respond-to("tablet") {
+      border-bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .footer__menu-radio:checked + .footer__menu-label {
+    > .footer__menu-list {
+      height: auto;
+      opacity: 1;
+      transform: none;
+      padding: $grid-spacing;
+    }
+
+    > .footer__header::after {
+      transform: rotate(315deg) translateY(50%);
+    }
+  }
+}
+
+.has-text-centered {
+  text-align: center;
+}
+
+.footer__all-rights-reserved {
+  display: flex;
+  justify-content: center;
+  small {
+    margin: auto 0;
+  }
+
+  @include respond-to("tablet") {
+    justify-content: flex-end;
+  }
+}
