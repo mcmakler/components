@@ -29,11 +29,12 @@
     "test": "./node_modules/.bin/jest"
   },
   "dependencies": {
+    "babel-plugin-globals": "^3.0.0",
     "classnames": "^2.2.5",
     "mcmakler-components-style": "^0.0.1-alpha.7",
     "prop-types": "^15.6.0",
     "react-autosuggest": "^9.3.2",
-    "react-icons": "^2.2.7",
+    "react-icons": "^3.0.5",
     "react-image-gallery": "^0.8.5"
   },
   "peerDependencies": {
