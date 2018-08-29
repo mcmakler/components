@@ -1,0 +1,185 @@
+@import "./../variables";
+@import "./../mixins/respond-to";
+@import "./../mixins/is-ie";
+@import "./../_buttons";
+@import "./../_typography";
+@import "./../grid";
+
+:root {
+  --header__height: 60px;
+  --header__z-index: 3000;
+  @include respond-to('tablet_landscape') {
+    --header__height: 80px;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--header__z-index);
+  display: flex;
+  flex: 1 0 100vw;
+  align-items: center;
+  padding: 0 ($grid-spacing * 3 + 2);
+  height: var(--header__height);
+  width: 100vw;
+  background-color: white;
+  border-bottom: 1px solid map-get($greys, 'line');
+  @include is-ie() {
+    z-index: 3000;
+    height: 60px;
+  }
+  @include respond-to('tablet_landscape') {
+    padding: 0 ($grid-spacing * 2);
+    @include is-ie() {
+      height: 80px;
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1080px) {
+    padding: 0 ($grid-spacing);
+  }
+
+  &__logo {
+    display: block;
+    max-height: 24px; // Fix SVG handling in older browsers.
+    @include respond-to('tablet_landscape') {
+      max-height: 40px; // Fix SVG handling in older browsers.
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 20px;
+  }
+
+  &__logo-image {
+    width: 110px;
+    height: 100%;
+    @include respond-to('tablet_landscape') {
+      width: 140px;
+    }
+  }
+  @keyframes extend {
+    from {
+      transform: scaleX(0);
+    }
+
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  &__separator {
+    display: none;
+    width: 1px;
+    height: $grid-spacing;
+    background-color: map-get($greys, 'line');
+    @media (min-width: 1550px) {
+      display: block;
+    }
+  }
+
+  &__right-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &__call-to-action {
+    @include is-ie {
+      height: 40px;
+    }
+
+    display: none;
+    padding: 0 $grid-spacing;
+    @include respond-to('tablet') {
+      display: flex;
+    }
+    @include respond-to('desktop') {
+      padding: 0 ($grid-spacing * 2);
+    }
+    @media (min-width: 1024px) and (max-width: 1080px) {
+      padding: 0 15px;
+    }
+    @media (min-width: 1550px) {
+      margin-right: $grid-spacing * 2;
+    }
+  }
+
+  &__contact {
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include respond-to('tablet_landscape') {
+      margin-left: $grid-spacing * 0.75;
+    }
+    @media (min-width: 1024px) and (max-width: 1080px) {
+      margin-left: 25px;
+    }
+    @media (min-width: 1550px) {
+      display: block;
+      margin-left: $grid-spacing * 2;
+    }
+  }
+
+  &__phone-number-container {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    width: 20px;
+    @media (min-width: 1550px) {
+      position: static;
+      width: 179px;
+      transform: none;
+    }
+  }
+
+  &__phone-number, 
+  &__phone-label {
+    display: none;
+    color: map-get($greys, 'body');
+    text-decoration: map-get($greys, 'body');
+    @media (min-width: 1550px) {
+      display: block;
+    }
+  }
+
+  &__phone-icon {
+    transform: rotate(90deg);
+    color: map-get($greys, 'secondary');
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: $grid-spacing;
+    @include respond-to('desktop') {
+      max-width: 16px;
+      max-height: 16px;
+      margin-right: $grid-spacing / 2;
+    }
+  }
+
+  & + * {
+    margin-top: var(--header__height);
+    @include is-ie() {
+      margin-top: 60px;
+      @include respond-to('tablet_landscape') {
+        margin-top: 80px;
+      }
+    }
+  }
+  @import "./_menu";
+}
+
+@import "./_burger_menu";

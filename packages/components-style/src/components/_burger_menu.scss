@@ -1,0 +1,85 @@
+@import "./../variables";
+@import "./../mixins/respond-to";
+
+.burger {
+  --burger__offset-left: ($grid-spacing / 2) + 2;
+  --burger__offset-top: ($grid-spacing / 2);
+
+  position: absolute;
+  top: 50%;
+  left: ($grid-spacing / 2) + 2px; // Designer being funny.
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%);
+  background: transparent;
+  @include respond-to('tablet_landscape') {
+    display: none;
+  }
+
+  &__button,
+  &__button::before,
+  &__button::after {
+    width: 24px;
+    height: 2px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    outline: none;
+    transition: 0.3s transform ease, 0.3s background-color ease;
+    cursor: pointer;
+    background-color: black;
+  }
+
+  &_active > &__button {
+    background-color: transparent;
+  }
+
+  &__button::before,
+  &__button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  &__button::before {
+    top: 12px;
+  }
+
+  &__button::after {
+    bottom: 12px;
+  }
+
+  &_active > &__button::before {
+    transform: rotate(45deg) translateX(4px) translateY(4px);
+  }
+
+  &_active > &__button::after {
+    transform: rotate(-45deg) translateX(5px) translateY(-6px);
+  }
+
+  &__underlay {
+    position: fixed;
+    left: -12px;
+    top: calc(var(--header__height) - 10px);
+    display: none;
+    padding: $grid-spacing;
+    width: 100vw;
+    height: calc(100vh - var(--header__height));
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.3s opacity ease;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &_active > &__underlay {
+    display: block;
+    opacity: 1;
+  }
+}
