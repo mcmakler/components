@@ -1,6 +1,6 @@
 module.exports = {
   rootDir: 'src',
-  testEnvironment: "node",
+  testEnvironment: 'node',
   moduleNameMapper: {
     '^.*\\.scss$': './../../../SCSSStub.js',
   },
