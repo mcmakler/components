@@ -45,7 +45,7 @@ const Footer = ({
         </div>
       </div>
 
-      <div className="container columns footer__imprint">
+      <div className="container columns imprint">
         <div className="column column_no-top-padding">
           <ul className="list list_inline footer__last-links">
             {footerLinks.map(link => (
@@ -56,7 +56,7 @@ const Footer = ({
             }
           </ul>
         </div>
-        <div className="column footer__all-rights-reserved">
+        <div className="column all-rights-reserved">
           <small className="fineprint push-right">
             &copy; {date.getFullYear()} { copyright }
           </small>

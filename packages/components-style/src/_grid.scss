@@ -8,6 +8,7 @@ $tablet: 768px;
 .columns {
   margin-left: $grid-spacing * -1;
   margin-right: $grid-spacing * -1;
+  margin-top: $grid-spacing * -1;
 
   &_center-horizontal {
     justify-content: center;
