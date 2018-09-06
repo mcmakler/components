@@ -3,7 +3,6 @@
   "author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
   "contributors": [
     "Baruch Velez <baruch.velez@mcmakler.de",
-    "Kathrin Holzmann <kathrin.holzmann@mcmakler.de",
     "Burak Polat <burak.polat@mcmakler.de>"
   ],
   "files": [
@@ -15,18 +14,15 @@
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
-  "main": "dist/lib/index.js",
-  "nextjs": "dist/nextjs/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build:script": "node ./scripts/build.js",
-    "build:nextjs": "yarn build:script && gulp nextjs",
-    "build:lib": "yarn build:script && gulp lib",
-    "build": "rimraf dist/ && yarn build:nextjs && yarn build:lib",
+    "build": "rimraf dist/ && gulp lib",
     "serve": "start-storybook -p 8000 -c .storybook",
     "lint": "eslint . --fix",
     "precommit": "npm run lint",
     "prepush": "yarn lint && yarn test",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "yarn test --watch"
   },
   "dependencies": {
     "babel-plugin-globals": "^3.0.0",
@@ -60,7 +56,6 @@
     "eslint-plugin-react": "^7.4.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
-    "gulp-sass": "^3.1.0",
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "postcss-loader": "^2.0.8",

@@ -6,28 +6,7 @@ The package distributes _two_ folders: `nextjs` and `lib`. The `nextjs` package 
 
 ### Example Usage
 
-For webpack projects
 ```js
 // ...
 import { RadioButton } from 'mcmakler-components-react';
-```
-
-For NextJS projects
-
-*main.scss*
-```scss
-// ...
-@import "~mcmakler-components-react/nextjs/all";
-```
-Can also import individual components
-
-```scss
-// ...
-@import "~mcmakler-components-react/nextjs/components/RadioButton/RadioButton";
-```
-
-*component.js*
-```js
-//...
-import { RadioButton } from 'mcmakler-components-react/nextjs';
 ```
