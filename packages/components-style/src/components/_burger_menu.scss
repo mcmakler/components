@@ -15,7 +15,7 @@
   height: 40px;
   transform: translateY(-50%);
   background: transparent;
-  @include respond-to('tablet_landscape') {
+  @include respond-to("tablet_landscape") {
     display: none;
   }
 

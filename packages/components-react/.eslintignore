@@ -1,4 +1,2 @@
-lib
-es
-nextjs
 *.spec.js
+dist
