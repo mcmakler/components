@@ -10,7 +10,7 @@
     "LICENSE",
     "README.md"
   ],
-  "version": "0.0.1-alpha.8-partial.1",
+  "version": "1.0.0-rc.1",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/design-guide",
   "scripts": {

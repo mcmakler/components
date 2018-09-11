@@ -12,16 +12,16 @@
   padding: ($grid-spacing);
   text-align: center;
   background-color: map-get($greys, "bg");
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     flex-direction: column;
     flex: 1 1 var(--infobox-size);
     min-height: 130px;
   }
-  @include respond-to('tablet_landscape') {
+  @include respond-to("tablet_landscape") {
     flex-direction: row;
     min-height: 60px;
   }
-  @include respond-to('desktop') {
+  @include respond-to("desktop") {
     flex-direction: column;
     flex: 1 1 var(--infobox-size);
     min-height: 130px;
@@ -29,13 +29,13 @@
   }
 
   &__container:not(.is-desktop) {
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       display: flex;
     }
-    @include respond-to('tablet_landscape') {
+    @include respond-to("tablet_landscape") {
       display: block;
     }
-    @include respond-to('desktop') {
+    @include respond-to("desktop") {
       display: flex;
     }
   }
@@ -52,13 +52,13 @@
     font-family: map-get($fonts, "headingFont");
     font-size: 32px;
     color: map-get($colors, "primary");
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       margin-right: 0;
     }
-    @include respond-to('tablet_landscape') {
+    @include respond-to("tablet_landscape") {
       margin-right: auto;
     }
-    @include respond-to('desktop') {
+    @include respond-to("desktop") {
       margin-right: 0;
     }
   }
@@ -74,15 +74,15 @@
 
   & + & {
     margin-top: 2px;
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       margin-top: 0;
       margin-left: 2px;
     }
-    @include respond-to('tablet_landscape') {
+    @include respond-to("tablet_landscape") {
       margin-top: 2px;
       margin-left: 0;
     }
-    @include respond-to('desktop') {
+    @include respond-to("desktop") {
       margin-top: 0;
       margin-left: 2px;
     }

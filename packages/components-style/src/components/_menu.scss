@@ -25,7 +25,7 @@
   justify-content: center;
   border-bottom: 1px solid map-get($greys, "line");
   min-height: 50px; // Design spec.
-  @include respond-to('tablet_landscape') {
+  @include respond-to("tablet_landscape") {
     flex-direction: row;
     align-items: center;
   }
@@ -38,7 +38,7 @@
 &__menu-item_active > a,
 &__menu-child_active > a {
   border-left: 2px solid map-get($colors, "primary");
-  @include respond-to('tablet_landscape') {
+  @include respond-to("tablet_landscape") {
     border-left: 0;
   }
 }
@@ -49,17 +49,17 @@
 }
 
 &__menu-item_has-children::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 20px;
   right: $grid-spacing;
   width: 4px;
   height: 4px;
-  border-top: 2px solid map-get($greys, 'secondary');
-  border-right: 2px solid map-get($greys, 'secondary');
+  border-top: 2px solid map-get($greys, "secondary");
+  border-right: 2px solid map-get($greys, "secondary");
   transform: translateY(-50%) rotate(135deg);
   transition: transform 0.3s ease;
-  @include respond-to('tablet_landscape') {
+  @include respond-to("tablet_landscape") {
     transform: none;
   }
 }
@@ -69,7 +69,7 @@
 }
 
 &__menu-link {
-  color: map-get($greys, 'body');
+  color: map-get($greys, "body");
   display: block;
   width: 100%;
   padding: ($grid-spacing / 2) $grid-spacing;
@@ -79,8 +79,8 @@
   display: none;
   padding: 0;
   list-style-type: none;
-  background: map-get($greys, 'bg');
-  box-shadow: inset 0 11px 18px -8px map-get($greys, 'secondary'), inset 0 -8px 8px -8px map-get($greys, 'line');
+  background: map-get($greys, "bg");
+  box-shadow: inset 0 11px 18px -8px map-get($greys, "secondary"), inset 0 -8px 8px -8px map-get($greys, "line");
 }
 
 &__menu-item_has-children_expanded > &__menu-children {
@@ -89,9 +89,9 @@
 }
 
 &__menu-child + &__menu-child {
-  border-top: 1px solid map-get($greys, 'line');
+  border-top: 1px solid map-get($greys, "line");
 }
-@include respond-to('tablet_landscape') {
+@include respond-to("tablet_landscape") {
   &__menu {
     position: static;
     display: flex;
@@ -110,13 +110,13 @@
     border: 0;
     padding-left: 10px;
     padding-right: 10px;
-    @include respond-to('desktop') {
+    @include respond-to("desktop") {
       padding-left: $grid-spacing;
       padding-right: $grid-spacing;
     }
 
     &:hover {
-      background-color: map-get($greys, 'bg');
+      background-color: map-get($greys, "bg");
     }
   }
 
@@ -129,7 +129,7 @@
     display: flex;
 
     &:hover {
-      background-color: map-get($greys, 'lightest');
+      background-color: map-get($greys, "lightest");
     }
   }
 
@@ -144,13 +144,13 @@
   }
 
   &__menu-item_active::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: map-get($colors, 'primary');
+    background-color: map-get($colors, "primary");
     transform: scaleX(0);
     transform-origin: left;
     animation: 0.6s 0.15s extend ease forwards;
@@ -158,7 +158,7 @@
 
   &__menu-item_has-children:hover {
     cursor: pointer;
-    background-color: map-get($greys, 'bg');
+    background-color: map-get($greys, "bg");
 
     & > .header__menu-children {
       display: block;
@@ -190,11 +190,11 @@
 
       &:hover {
         cursor: pointer;
-        background-color: map-get($greys, 'bg');
+        background-color: map-get($greys, "bg");
       }
 
       &_active {
-        background-color: map-get($greys, 'bg');
+        background-color: map-get($greys, "bg");
 
         &::after {
           content: none;

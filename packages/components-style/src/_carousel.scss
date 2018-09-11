@@ -34,7 +34,7 @@
       height: 4px;
       -webkit-appearance: none;
     }
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       &::-webkit-scrollbar {
         display: none;
         -webkit-appearance: initial;
@@ -69,14 +69,14 @@
     width: 80px;
     cursor: pointer;
     background: white;
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       display: flex;
     }
   }
 
   &__navigation_prev::before,
   &__navigation_next::before {
-    content: '';
+    content: "";
     display: block;
     width: 20px;
     height: 20px;
@@ -109,9 +109,6 @@
   &__navigation_next:hover::before {
     --translateX: $grid-spacing * .5;
     --translateY: $grid-spacing * -.5;
-  }
-
-  &__navigation {
   }
 
   &__item + &__item {
