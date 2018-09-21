@@ -1,14 +1,9 @@
-import { FaFacebookF } from 'react-icons/fa';
-import { IoLogoTwitter, IoLogoInstagram } from 'react-icons/io';
-import { TiSocialLinkedin } from 'react-icons/ti';
+import { FaFacebookF } from 'react-icons/fa/index.mjs';
+import { IoLogoTwitter, IoLogoInstagram } from 'react-icons/io/index.mjs';
+import { TiSocialLinkedin } from 'react-icons/ti/index.mjs';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const getIcon = (socialIcon) => {
-  const Inner = socialIcon;
-  return <Inner />;
-};
 
 const iconMap = {
   FACEBOOK: FaFacebookF,
@@ -27,7 +22,7 @@ const SocialLinks = ({ links }) => (
         rel="noopener noreferrer"
         className="social__icon"
       >
-        {getIcon(iconMap[link.icon])}
+        {iconMap[link.icon]()}
       </a>
     ))}
   </div>

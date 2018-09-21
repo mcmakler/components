@@ -1,6 +1,6 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import { FaMapMarker } from 'react-icons/fa';
+import { FaMapMarker } from 'react-icons/fa/index.mjs';
 import './LocationPicker.scss';
 
 function renderInput(inputProps) {

@@ -3,20 +3,20 @@
   "author": "Sai Satchitanand <sai.satchitanand@mcmakler.de>",
   "contributors": [
     "Baruch Velez <baruch.velez@mcmakler.de",
-    "Burak Polat <burak.polat@mcmakler.de>"
+    "Burak Polat <burak.polat@mcmakler.de>",
+    "Amr Abdullah <amr.abdullah@mcmakler.de>"
   ],
   "files": [
-    "dist",
+    "src",
     "LICENSE",
     "README.md"
   ],
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "license": "MIT",
   "repository": "https://github.com/mcmakler/components/packages/react-components",
   "description": "mcmakler-react-components",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "build": "rimraf dist/ && gulp lib",
     "serve": "start-storybook -p 8000 -c .storybook",
     "lint": "eslint . --fix",
     "precommit": "npm run lint",
@@ -54,15 +54,12 @@
     "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "postcss-loader": "^2.0.8",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
-    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6"
   },
   "keywords": [
