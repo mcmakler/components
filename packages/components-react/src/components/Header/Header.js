@@ -7,19 +7,26 @@ import RightSection from './RightSection';
 
 import './Header.scss';
 
-const Header = ({ menuItems }) => (
+const Header = ({ menuItems, rightSection }) => (
   <header className="header">
     <BurgerMenu />
     <a className="logo header__logo" href="https://www.mcmakler.de">
       <img className="header__logo-image" alt="" src="https://www.mcmakler.de/images/header/logo.svg" />
     </a>
     <Menu menuItems={menuItems} />
-    <RightSection />
+    <RightSection
+      ctaLabel={rightSection.ctaLabel}
+      ctaTarget={rightSection.ctaTarget}
+      phoneNumberLabel={rightSection.phoneNumberLabel}
+      phoneNumberTarget={rightSection.phoneNumberTarget}
+      phoneNumberText={rightSection.phoneNumberText}
+    />
   </header>
 );
 
 Header.propTypes = {
   menuItems: PropTypes.instanceOf(Object),
+  rightSection: PropTypes.instanceOf(Object),
 };
 
 Header.defaultProps = {
@@ -101,6 +108,13 @@ Header.defaultProps = {
       title: 'Unsere Immobilien',
       target: '_blank',
     },
+  },
+  rightSection: {
+    ctaLabel: 'Jetzt kostenlos bewerten',
+    ctaTarget: 'https://www.mcmakler.de/immobilienbewertung/',
+    phoneNumberLabel: '0800 500 80 02',
+    phoneNumberTarget: '+498005008002',
+    phoneNumberText: 'Kostenlose Service-Hotline',
   },
 };
 
