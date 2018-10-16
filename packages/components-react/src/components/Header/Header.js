@@ -7,11 +7,11 @@ import RightSection from './RightSection';
 
 import './Header.scss';
 
-const Header = ({ menuItems, rightSection }) => (
+const Header = ({ logoPath, logoTarget, menuItems, rightSection }) => (
   <header className="header">
     <BurgerMenu />
-    <a className="logo header__logo" href="https://www.mcmakler.de">
-      <img className="header__logo-image" alt="" src="https://www.mcmakler.de/images/header/logo.svg" />
+    <a className="logo header__logo" href={logoTarget}>
+      <img className="header__logo-image" alt="" src={logoPath} />
     </a>
     <Menu menuItems={menuItems} />
     <RightSection
@@ -25,11 +25,15 @@ const Header = ({ menuItems, rightSection }) => (
 );
 
 Header.propTypes = {
+  logoPath: PropTypes.string,
+  logoTarget: PropTypes.string,
   menuItems: PropTypes.instanceOf(Object),
   rightSection: PropTypes.instanceOf(Object),
 };
 
 Header.defaultProps = {
+  logoPath: 'https://www.mcmakler.de/images/header/logo.svg',
+  logoTarget: '/',
   menuItems: {
     verkaufen: {
       id: 'verkaufen',
