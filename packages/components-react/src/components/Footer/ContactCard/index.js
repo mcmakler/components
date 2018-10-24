@@ -11,7 +11,7 @@ const ContactCard = ({ contactInfo }) => (
         <img
           className="footer__icon"
           alt=""
-          src="https://www.mcmakler.de/images/icons/email.svg"
+          src={contactInfo.emailIcon}
         />
         <a
           className="footer__card-link"
@@ -24,7 +24,7 @@ const ContactCard = ({ contactInfo }) => (
       <div className="footer__card__contact">
         <img
           className="footer__icon"
-          src="https://www.mcmakler.de/images/icons/phone.svg"
+          src={contactInfo.phoneIcon}
           alt=""
         />
         <a className="card-link" href={`tel:${contactInfo.phoneHref}`}>
@@ -44,9 +44,11 @@ ContactCard.propTypes = {
     title: PropTypes.string,
     email: PropTypes.string,
     emailDescription: PropTypes.string,
+    emailIcon: PropTypes.string,
     phone: PropTypes.string,
     phoneHref: PropTypes.string,
     phoneDescription: PropTypes.string,
+    phoneIcon: PropTypes.string,
     contactDescription: PropTypes.string,
   }),
 };
@@ -56,9 +58,11 @@ ContactCard.defaultProps = {
     title: 'Kontakt',
     email: 'service@mcmakler.de',
     emailDescription: 'McMakler Email-Adresse',
+    emailIcon: 'https://www.mcmakler.de/static/icons/email.svg',
     phone: '0800 500 80 020',
     phoneHref: '+498005008002',
     phoneDescription: 'Kostenlose Service-Hotline',
+    phoneIcon: 'https://www.mcmakler.de/static/icons/phone.svg',
     contactDescription: `
       Wir beraten Sie gerne in einem persönlichen
       Gespräch am Telefon. Wir sind erreichbar
