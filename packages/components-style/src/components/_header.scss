@@ -160,13 +160,8 @@ main {
   &__phone-icon {
     transform: rotate(90deg);
     color: map-get($greys, "secondary");
-    max-width: 24px;
-    max-height: 24px;
-    margin-right: $grid-spacing;
-    @include respond-to("desktop") {
-      max-width: 16px;
-      max-height: 16px;
-      margin-right: $grid-spacing / 2;
+    @media (max-width: 1550px) {
+      margin-right: $grid-spacing;
     }
   }
 
