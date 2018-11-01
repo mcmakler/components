@@ -7,7 +7,9 @@ import RightSection from './RightSection';
 
 import './Header.scss';
 
-const Header = ({ logoPath, logoTarget, menuItems, rightSection }) => (
+const Header = ({
+  logoPath, logoTarget, menuItems, rightSection,
+}) => (
   <header className="header">
     <BurgerMenu />
     <a className="logo header__logo" href={logoTarget}>

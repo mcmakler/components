@@ -21,6 +21,7 @@ const Select = (props) => {
       <option
         key={i.id}
         value={i.value}
+        {...i}
       >
         {i.option}
       </option>

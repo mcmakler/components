@@ -160,8 +160,8 @@ main {
   &__phone-icon {
     transform: rotate(90deg);
     color: map-get($greys, "secondary");
-    @media (max-width: 1550px) {
-      margin-right: $grid-spacing;
+    @media (min-width: 1550px) {
+      margin-right: $grid-spacing / 2;
     }
   }
 
