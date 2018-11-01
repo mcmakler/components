@@ -10,6 +10,7 @@ const RadioGroup = ({ id, buttons, onChange }) => (
       buttons.map((button, index) => (
         <RadioButton
           {...button}
+          key={button.value}
           id={`radio_${id}_${index}`}
           name={`radio_${id}`}
           onChange={onChange}
