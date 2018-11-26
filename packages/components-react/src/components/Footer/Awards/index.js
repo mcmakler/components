@@ -16,21 +16,21 @@ const Awards = ({ awardsData }) => (
               rel="noopener noreferrer"
             >
               <img
-                className={badge.modifier}
+                className={badge.modifier || ''}
                 src={badge.src}
-                alt={badge.alt}
-                title={badge.title}
+                alt={badge.alt || ''}
+                title={badge.title || ''}
               />
             </a>
             :
-            <div id="auorg-bg">
+            <div {...badge.wrappersProps}>
               <a
                 href={badge.url}
                 target="_blank"
-                title={badge.title}
-                className={badge.modifier}
+                title={badge.title || ''}
+                className={badge.modifier || ''}
                 rel="noopener noreferrer"
-                alt={badge.alt}
+                alt={badge.alt || ''}
               >
                 <span>{badge.text}</span>
               </a>
@@ -68,6 +68,7 @@ Awards.defaultProps = {
         alt: 'AUSGEZEICHNET.ORG Siegel',
         title: '"AUSGEZEICHNET.ORG Gütesiegel',
         modifier: 'auorg-br',
+        wrappersProps: {},
       },
       {
         defaultScenario: true,
