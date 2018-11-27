@@ -27,10 +27,8 @@ const Awards = ({ awardsData }) => (
               <a
                 href={badge.url}
                 target="_blank"
-                title={badge.title || ''}
                 className={badge.modifier || ''}
                 rel="noopener noreferrer"
-                alt={badge.alt || ''}
               >
                 <span>{badge.text}</span>
               </a>
