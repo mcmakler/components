@@ -71,7 +71,7 @@ Awards.defaultProps = {
       {
         defaultScenario: true,
         url: 'https://www.ekomi.de/bewertungen-mcmakler-gmbh.html',
-        src: 'https://www.mcmakler.de//images/logos/ekomi.png',
+        src: 'https://www.mcmakler.de/static/images/logos/ekomi.png',
         alt: 'eKomi Siegel',
         title: 'eKomi Siegel Gold',
         modifier: 'ekomi-badge',
