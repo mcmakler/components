@@ -13,7 +13,7 @@ const Header = ({
   <header className="header">
     <BurgerMenu />
     <a className="logo header__logo" href={logoTarget}>
-      <img className="header__logo-image" alt="" src={logoPath} />
+      <img className="header__logo-image" alt="McMakler Logo" src={logoPath} />
     </a>
     <Menu menuItems={menuItems} />
     <RightSection
