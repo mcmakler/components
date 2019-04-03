@@ -77,18 +77,13 @@ Header.defaultProps = {
         },
         unser_team: {
           id: 'unser_team',
-          url: 'https://www.mcmakler.de/unser-team/',
+          url: 'https://www.mcmakler.de/standorte-experten/',
           title: 'Unser Team',
         },
         presse: {
           id: 'presse',
           url: 'https://www.mcmakler.de/presse/',
           title: 'Presse',
-        },
-        standorte: {
-          id: 'standorte',
-          url: 'https://www.mcmakler.de/standorte/',
-          title: 'Standorte',
         },
         wohnlagenkarte: {
           id: 'wohnlagenkarte',
