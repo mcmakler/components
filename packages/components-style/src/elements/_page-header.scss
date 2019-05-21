@@ -14,6 +14,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  word-break: break-word;
   @include respond-to("tablet_landscape") {
     min-height: 340px;
   }
