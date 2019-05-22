@@ -13,6 +13,7 @@ import Textarea from './components/Textarea/Textarea';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import PreFooter from './components/PreFooter/PreFooter';
+import RoomTourButton from './components/RoomTourButton/RoomTourButton';
 
 export {
   BaseButton,
@@ -30,4 +31,5 @@ export {
   Header,
   Footer,
   PreFooter,
+  RoomTourButton,
 };

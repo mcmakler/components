@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames/bind';
+
+import RoomTourButton from './../RoomTourButton/RoomTourButton';
 
 const PropertyCardImg = (props) => {
   const {
     src,
     purpose,
     hoverText,
+    roomTourLink,
     alt,
     className,
   } = props;
@@ -19,6 +21,7 @@ const PropertyCardImg = (props) => {
 
   let purposeElem = null;
   let hoverTextElem = null;
+  let virtualTourElement = null;
 
   if (purpose) {
     purposeElem = <span className="property-card__label">{purpose}</span>;
@@ -26,6 +29,10 @@ const PropertyCardImg = (props) => {
 
   if (hoverText) {
     hoverTextElem = <span className="property-card__hover-text">{hoverText}</span>;
+  }
+
+  if (roomTourLink) {
+    virtualTourElement = <RoomTourButton className="property-card__tour-link" />;
   }
 
   return (
@@ -38,6 +45,7 @@ const PropertyCardImg = (props) => {
       <figcaption>
         {purposeElem}
         {hoverTextElem}
+        {virtualTourElement}
       </figcaption>
     </figure>
   );
@@ -47,6 +55,7 @@ PropertyCardImg.propTypes = {
   src: PropTypes.string.isRequired,
   purpose: PropTypes.string,
   hoverText: PropTypes.string,
+  roomTourLink: PropTypes.string,
   alt: PropTypes.string,
   className: PropTypes.string,
 };
@@ -54,6 +63,7 @@ PropertyCardImg.propTypes = {
 PropertyCardImg.defaultProps = {
   purpose: '',
   hoverText: '',
+  roomTourLink: '',
   alt: '',
   className: '',
 };

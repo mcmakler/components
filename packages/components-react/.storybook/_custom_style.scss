@@ -2,7 +2,7 @@
 
 .storycontainer {
   width: 100%;
-  max-width: 800px;
+  max-width: calc(100% - 50px);
   margin: 50px auto;
   padding: 20px;
   border: solid 1px #999;

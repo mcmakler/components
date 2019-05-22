@@ -18,7 +18,7 @@
   "description": "mcmakler-react-components",
   "main": "src/index.js",
   "scripts": {
-    "serve": "start-storybook -p 8000 -c .storybook",
+    "serve": "start-storybook -p 8000 -c .storybook -s ./public",
     "lint": "eslint . --fix",
     "precommit": "npm run lint",
     "prepush": "yarn lint && yarn test",

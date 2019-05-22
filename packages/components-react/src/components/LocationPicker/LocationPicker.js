@@ -1,13 +1,13 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import { FaMapMarker } from 'react-icons/fa/index.mjs';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 import './LocationPicker.scss';
 
 function renderInput(inputProps) {
   return (
     <div className="locationpicker">
       <i className="locationpicker__icon">
-        <FaMapMarker />
+        <FaMapMarkerAlt />
       </i>
       <input
         type="text"

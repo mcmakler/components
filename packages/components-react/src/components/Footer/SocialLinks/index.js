@@ -1,6 +1,6 @@
-import { FaFacebookF } from 'react-icons/fa/index.mjs';
-import { IoLogoTwitter, IoLogoInstagram } from 'react-icons/io/index.mjs';
-import { TiSocialLinkedin } from 'react-icons/ti/index.mjs';
+import { FaFacebookF } from 'react-icons/fa';
+import { IoLogoTwitter, IoLogoInstagram } from 'react-icons/io';
+import { TiSocialLinkedin } from 'react-icons/ti';
 
 import React from 'react';
 import PropTypes from 'prop-types';

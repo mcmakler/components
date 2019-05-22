@@ -2,25 +2,51 @@
 @import "./../mixins/respond-to";
 @import "./../links";
 
+$container-margin: 20px;
+$grid-gutter: 40px;
+
 .property-card {
-  display: flex;
   color: map-get($greys, "darkest");
   font-family: map-get($fonts, "bodyFont");
-  border-bottom: 1px solid map-get($greys, "line");
-  margin: ($grid-spacing / 2) $grid-spacing;
-  max-width: 360px;
   transition: all 0.5s ease;
+  max-width: none;
+  display: block;
+  position: relative;
+  margin: 0 0 $grid-gutter 0;
+
+  &:after {
+    position: absolute;
+    height: 1px;
+    width: 100vw;
+    margin: 0 -$container-margin;
+    background: map-get($greys, 'line');
+    content: "";
+  }
+
   @include respond-to("tablet") {
     border: 1px solid map-get($greys, "line");
+    flex: 0 0 calc(50% - #{$grid-gutter}/2);
+
+    &:after {
+      content: none;
+    }
+
+    .property-card__image {
+      height: 240px;
+    }    
   }
 
   @include respond-to("desktop") {
+    flex: 0 0 calc(100%/3 - #{$grid-gutter}/2);
+    max-width: 360px;
+
     &:hover {
       box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.15);
       .property-card__image {
         filter: blur(2px);
       }
-      .property-card__label {
+      .property-card__label,
+      .property-card__tour-link {
         display: none;
       }
       .property-card__hover-text {
@@ -28,7 +54,6 @@
       }
       .property-card__figure figcaption {
         background: rgba(0,0,0,.3);
-        display: flex;
         align-items: center;
         justify-content: center;
       }
@@ -43,11 +68,11 @@
     position: relative;
     overflow: hidden;
     max-width: 100%;
-    height: 240px;
-    margin: 0;
-    margin-bottom: 25px;
+    margin: 0 0 25px 0;
+    height: inherit;
 
     figcaption {
+      display: flex;
       transition: all 0.5s ease;
       width: 100%;
       height: 100%;
@@ -59,19 +84,39 @@
   &__image {
     display: block;
     max-width: 100%;
-    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    height: 210px;
+  }
+
+  &__label,
+  &__tour-link {
+    align-self: flex-start;
   }
 
   &__label {
+    display: flex;
+    align-items: center;
     background-color: map-get($greys, "lightest");
     border: solid 1px map-get($greys, "line");
     border-radius: 2px;
-    color: map-get($greys, "secondary");
-    display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
+    margin: $container-margin;
+    align-self: flex-start;
+    padding: 3px 8px;
     font-weight: 500;
-    padding: 10px;
-    margin: 2em 1em;
+    color: map-get($greys, "secondary");
+  }
+
+  &__tour-link {
+    align-self: flex-start;
+    margin: 20px 20px 20px auto;
+  }
+
+  &__tour-link-icon {
+    width: 26px;
+    margin-right: 16px;
+    color: map-get($colors, "primary");
   }
 
   &__hover-text {

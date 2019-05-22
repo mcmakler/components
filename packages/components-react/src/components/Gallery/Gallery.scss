@@ -10,12 +10,58 @@
   font-style: normal;
 }
 
-.image-gallery-thumbnails-wrapper {
-  display: none;
+.gallery {
+  position: relative;
+
+  &__slide {
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include respond-to("tablet") {
+      height: 560px;
+    }
+  }
+
+  &__top-room-tour {
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+    right: 20px;
+    
+    @include respond-to("tablet") {
+      left: 20px;
+      right: initial;
+    }
+  }
+  &__bottom-room-tour,
+  &__iframe {
+    position: absolute;
+    display: none;
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 96px);
+    border: none;
+  }
+
+  &__bottom-room-tour {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+  }
 }
 
-@include respond-to("tablet") {
-  .image-gallery-thumbnails-wrapper {
+.image-gallery-thumbnails-wrapper {
+  display: none;
+  @include respond-to("tablet") {
     display: block;
   }
 }
@@ -25,9 +71,23 @@
 }
 
 .image-gallery-content.fullscreen {
-  background: rgba(0,0,0, 0.1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 85%;
   margin: 0 auto;
+  background: rgba(0,0,0, 0.1);
+  
+  @include respond-to("tablet") {
+    .gallery {
+      &__slide {
+        height: 65vh;
+      }
+    }
+  }
+  
   .image-gallery-left-nav {
     left: -40px;
   }
@@ -35,7 +95,8 @@
     right: -40px;
   }
   .image-gallery-thumbnails-wrapper {
-    display: none;
+    margin-top: 15px;
+    width: calc(100% - 110px);
   }
   .image-gallery-fullscreen-button {
     top: -20px;
@@ -86,12 +147,12 @@
   }
 }
 
-.image-gallery-thumbnails-wrapper.top {
-  background: rgba(0,0,0, 0.5);
-  position: absolute;
-  z-index: 100;
-  width: 100%;
-  bottom: 0;
+.image-gallery-thumbnails {
+  padding: 0;
+}
+
+.image-gallery-thumbnails-wrapper {
+  background-color: map-get($greys, "secondaryAlt");
 }
 
 .image-gallery-thumbnail {
@@ -102,6 +163,9 @@
   &.active {
     border-color: map-get($greys, "lightest");
     opacity: 1;
+  }
+  img {
+    height: 74px;
   }
 }
 .image-gallery-left-nav, .image-gallery-right-nav {
