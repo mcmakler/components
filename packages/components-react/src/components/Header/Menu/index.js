@@ -59,6 +59,7 @@ class Menu extends Component {
                 customClass={item.customClass || ''}
                 target={item.target || ''}
                 isActive={item.isActive || false}
+                hasSeparator={item.hasSeparator}
               />
             ))
           }

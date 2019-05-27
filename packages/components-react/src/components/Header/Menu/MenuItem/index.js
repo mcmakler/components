@@ -9,6 +9,7 @@ const MenuItem = ({
   target,
   items,
   isActive,
+  hasSeparator,
 }) => {
   let itemClasses = classNames({
     'header__menu-item': true,
@@ -52,14 +53,17 @@ const MenuItem = ({
   };
 
   return (
-    <li className={itemClasses}>
-      <a target={target || ''} className="header__menu-link" href={url}>
-        {title}
-      </a>
-      {
-        (items && Object.keys(items).length > 0) && renderMenuItemChildren(items)
-      }
-    </li>
+    <React.Fragment>
+      <li className={itemClasses}>
+        <a target={target || ''} className="header__menu-link" href={url}>
+          {title}
+        </a>
+        {
+          (items && Object.keys(items).length > 0) && renderMenuItemChildren(items)
+        }
+      </li>
+      { hasSeparator && <li className="header__separator" />}
+    </React.Fragment>
   );
 };
 
@@ -70,6 +74,7 @@ MenuItem.propTypes = {
   target: PropTypes.string,
   items: PropTypes.instanceOf(Object),
   isActive: PropTypes.bool,
+  hasSeparator: PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
@@ -77,6 +82,7 @@ MenuItem.defaultProps = {
   target: '',
   items: {},
   isActive: false,
+  hasSeparator: false,
 };
 
 export default MenuItem;

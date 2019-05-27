@@ -73,6 +73,7 @@ const menuItems = {
         target: '_blank',
       },
     },
+    hasSeparator: true,
   },
   unsere_immobilien: {
     id: 'unsere_immobilien',
