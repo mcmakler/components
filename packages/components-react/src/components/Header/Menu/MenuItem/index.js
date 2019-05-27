@@ -62,7 +62,11 @@ const MenuItem = ({
           (items && Object.keys(items).length > 0) && renderMenuItemChildren(items)
         }
       </li>
-      { hasSeparator && <li className="header__separator" />}
+      { hasSeparator &&
+        <li className="header__menu-item header__menu-item_separator">
+          <div className="header__separator" />
+        </li>
+      }
     </React.Fragment>
   );
 };
