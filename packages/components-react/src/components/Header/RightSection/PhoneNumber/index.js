@@ -1,4 +1,4 @@
-import { FaPhone } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa/index.esm';
 import React from 'react';
 import PropTypes from 'prop-types';
 
