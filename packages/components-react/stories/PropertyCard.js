@@ -18,7 +18,7 @@ const advertisementData = {
   numberOfRooms: 3,
   space: 102,
   target: 'https://www.mcmakler.de',
-  roomTourLink: 'https://app.immoviewer.com/portal/tour/1494816?accessKey=5c95',
+  linkToRoomTour: 'https://app.immoviewer.com/portal/tour/1494816?accessKey=5c95',
 };
 
 const style = {

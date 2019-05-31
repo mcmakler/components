@@ -74,10 +74,10 @@ storiesOf('Gallery', module)
     () => (
       <Gallery
         items={galleryImages}
-        roomTourLink="https://app.immoviewer.com/portal/tour/1494816?accessKey=5c95"
+        linkToRoomTour="https://app.immoviewer.com/portal/tour/1494816?accessKey=5c95"
         showThumbnails
         roomTourButtonClick={() => {
-          console.log('SHOW IFRAME :D');
+          // Show iframe if neccesary here
         }}
       />
     ),

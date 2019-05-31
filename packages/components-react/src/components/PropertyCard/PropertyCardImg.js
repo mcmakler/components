@@ -9,7 +9,7 @@ const PropertyCardImg = (props) => {
     src,
     purpose,
     hoverText,
-    roomTourLink,
+    linkToRoomTour,
     alt,
     className,
   } = props;
@@ -31,7 +31,7 @@ const PropertyCardImg = (props) => {
     hoverTextElem = <span className="property-card__hover-text">{hoverText}</span>;
   }
 
-  if (roomTourLink) {
+  if (linkToRoomTour) {
     virtualTourElement = <RoomTourButton className="property-card__tour-link" />;
   }
 
@@ -55,7 +55,7 @@ PropertyCardImg.propTypes = {
   src: PropTypes.string.isRequired,
   purpose: PropTypes.string,
   hoverText: PropTypes.string,
-  roomTourLink: PropTypes.string,
+  linkToRoomTour: PropTypes.string,
   alt: PropTypes.string,
   className: PropTypes.string,
 };
@@ -63,7 +63,7 @@ PropertyCardImg.propTypes = {
 PropertyCardImg.defaultProps = {
   purpose: '',
   hoverText: '',
-  roomTourLink: '',
+  linkToRoomTour: '',
   alt: '',
   className: '',
 };

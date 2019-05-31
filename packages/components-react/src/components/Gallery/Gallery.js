@@ -60,7 +60,7 @@ class Gallery extends Component {
   render() {
     return (
       <div className="gallery">
-        {(this.props.roomTourLink &&
+        {(this.props.linkToRoomTour &&
           <div className="gallery__top-room-tour">
             <RoomTourButton text="360º" onClick={this.handleRoomTourClick} />
           </div>
@@ -121,7 +121,7 @@ class Gallery extends Component {
             );
           }}
         />
-        {((this.props.roomTourLink) &&
+        {((this.props.linkToRoomTour) &&
           <div>
             <div
               className={cn('gallery__bottom-room-tour', { 'gallery__bottom-room-tour--visible': this.state.isFullScreen })}
@@ -135,7 +135,7 @@ class Gallery extends Component {
             <div>
               <iframe
                 title="360"
-                src={this.props.roomTourLink}
+                src={this.props.linkToRoomTour}
                 className={cn('gallery__iframe', { 'gallery__iframe--visible': (this.state.showRoomTour && this.state.isFullScreen) })}
               />
             </div>
@@ -148,13 +148,13 @@ class Gallery extends Component {
 
 Gallery.propTypes = {
   ...ImageGallery.propTypes,
-  roomTourLink: PropTypes.string,
+  linkToRoomTour: PropTypes.string,
   roomTourButtonClick: PropTypes.func,
 };
 
 Gallery.defaultProps = Object.assign({}, ImageGallery.defaultProps, {
   showPlayButton: false,
-  roomTourLink: '',
+  linkToRoomTour: '',
   roomTourButtonClick: () => {},
 });
 
