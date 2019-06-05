@@ -59,7 +59,7 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div className="gallery">
+      <div className={cn('gallery', { 'gallery--with-360': this.props.linkToRoomTour })}>
         {(this.props.linkToRoomTour &&
           <div className="gallery__top-room-tour">
             <RoomTourButton text="360º" onClick={this.handleRoomTourClick} />

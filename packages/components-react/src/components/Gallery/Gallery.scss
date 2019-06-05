@@ -13,6 +13,14 @@
 .gallery {
   position: relative;
 
+
+  &--with-360 {
+    .image-gallery-content.fullscreen
+    .image-gallery-thumbnails-wrapper {
+      width: calc(100% - 110px);
+    }
+  }
+
   &__slide {
     height: 250px;
     background-repeat: no-repeat;
@@ -99,7 +107,6 @@
   }
   .image-gallery-thumbnails-wrapper {
     margin-top: 15px;
-    width: calc(100% - 110px);
   }
   .image-gallery-fullscreen-button {
     top: -20px;
