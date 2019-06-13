@@ -18,6 +18,7 @@ const PropertyCard = (props) => {
     numberOfRooms,
     space,
     target,
+    linkToRoomTour,
   } = advertisement;
 
   return (
@@ -28,6 +29,7 @@ const PropertyCard = (props) => {
           alt={altText}
           purpose={purpose}
           hoverText={hoverText}
+          linkToRoomTour={linkToRoomTour}
         />
         <div className="property-card__content">
           <div className="title">

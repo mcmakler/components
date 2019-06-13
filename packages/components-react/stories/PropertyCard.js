@@ -18,6 +18,14 @@ const advertisementData = {
   numberOfRooms: 3,
   space: 102,
   target: 'https://www.mcmakler.de',
+  linkToRoomTour: 'https://app.immoviewer.com/portal/tour/1494816?accessKey=5c95',
+};
+
+const style = {
+  display: 'flex',
+  paddingTop: '40px',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
 };
 
 storiesOf('PropertyCard', module)
@@ -27,7 +35,7 @@ storiesOf('PropertyCard', module)
   PropertyCard demo
 `,
     () => (
-      <div style={{ display: 'flex' }}>
+      <div style={style}>
         <PropertyCard
           advertisement={advertisementData}
         />

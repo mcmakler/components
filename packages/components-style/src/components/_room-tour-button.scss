@@ -1,0 +1,38 @@
+@import "./../variables";
+
+.room-tour-btn {
+  display: flex;
+  align-items: center;
+  padding: 7px 16px;
+  background-color: map-get($greys, "lightest");
+  border: 1px solid transparent;
+  color: map-get($greys, "body");
+  box-shadow: 
+    0 1px 1px 0 rgba(0,0,0,0.14), 
+    0 2px 1px -1px rgba(0,0,0,0.12),
+    0 1px 3px 0 rgba(0,0,0,0.2);
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    border: 1px solid map-get($colors, "primary");
+  }
+  &__icon {
+    width: 26px;
+    margin-right: 16px;
+    color: map-get($colors, "primary");
+  }
+  &--square {
+    flex-direction: column;
+    padding: 16px 20px;
+    .room-tour-btn__icon {
+      margin: 0 0 8px 0;
+      width: 40px;
+    }
+  }
+}

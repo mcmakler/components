@@ -15,6 +15,30 @@ const galleryImages = [
     original: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998fee5d117.15953156.jpg',
     thumbnail: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998ffd033a3.06854982.jpg',
   },
+  {
+    original: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998cd886f60.16589248.jpg',
+    thumbnail: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998ce6c7ae6.80185912.jpg',
+  },
+  {
+    original: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998e2561a73.19629148.jpg',
+    thumbnail: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998e34d8114.18742660.jpg',
+  },
+  {
+    original: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998fee5d117.15953156.jpg',
+    thumbnail: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998ffd033a3.06854982.jpg',
+  },
+  {
+    original: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998cd886f60.16589248.jpg',
+    thumbnail: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998ce6c7ae6.80185912.jpg',
+  },
+  {
+    original: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998e2561a73.19629148.jpg',
+    thumbnail: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998e34d8114.18742660.jpg',
+  },
+  {
+    original: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998fee5d117.15953156.jpg',
+    thumbnail: 'https://d1dh1rmsjhx19r.cloudfront.net/assets/expose_v2/thumbnail.597998ffd033a3.06854982.jpg',
+  },
 ];
 
 storiesOf('Gallery', module)
@@ -39,6 +63,22 @@ storiesOf('Gallery', module)
         items={galleryImages}
         autoPlay
         showThumbnails={false}
+      />
+    ),
+  )
+  .addWithInfo(
+    'With top left render item',
+    `
+    Gallery demo with top left render item
+  `,
+    () => (
+      <Gallery
+        items={galleryImages}
+        linkToRoomTour="https://app.immoviewer.com/portal/tour/1494816?accessKey=5c95"
+        showThumbnails
+        roomTourButtonClick={() => {
+          // Show iframe if neccesary here
+        }}
       />
     ),
   );

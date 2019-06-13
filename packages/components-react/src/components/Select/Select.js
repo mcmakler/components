@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { FaChevronDown } from 'react-icons/fa/index.mjs';
+import { FaChevronDown } from 'react-icons/fa/index.esm';
 import './Select.scss';
 
 const Select = (props) => {
@@ -21,7 +21,6 @@ const Select = (props) => {
       <option
         key={i.id}
         value={i.value}
-        {...i}
       >
         {i.option}
       </option>
