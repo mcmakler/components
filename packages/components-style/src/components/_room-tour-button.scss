@@ -28,6 +28,7 @@
     color: map-get($colors, "primary");
   }
   &--square {
+    height: 82px;
     flex-direction: column;
     padding: 16px 20px;
     .room-tour-btn__icon {
