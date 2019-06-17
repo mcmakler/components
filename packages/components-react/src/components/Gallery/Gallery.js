@@ -32,7 +32,7 @@ class Gallery extends Component {
     if (!state.roomTourPositioned) {
       const galleryBottomRoomTour = document.getElementsByClassName('gallery__bottom-room-tour')[0];
       const galleryContent = document.getElementsByClassName('image-gallery-content')[0];
-      const iframe = document.getElementsByClassName('gallery__iframe')[0];
+      const iframe = document.getElementsByClassName('gallery__iframe-wrapper')[0];
 
       galleryContent.append(galleryBottomRoomTour);
       galleryContent.append(iframe);
@@ -132,9 +132,13 @@ class Gallery extends Component {
                 onClick={this.handleRoomTourClick}
               />
             </div>
-            <div>
+            <div className="gallery__iframe-wrapper">
               <iframe
+                allowFullScreen
                 title="360"
+                width="100%"
+                height="100%"
+                scrolling="no"
                 src={this.props.linkToRoomTour}
                 className={cn('gallery__iframe', { 'gallery__iframe--visible': (this.state.showRoomTour && this.state.isFullScreen) })}
               />
