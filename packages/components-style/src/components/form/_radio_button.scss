@@ -3,7 +3,6 @@
 
 .radio {
   display: flex;
-
   .radio__label {
     align-items: center;
     box-sizing: border-box;
@@ -20,36 +19,32 @@
       margin-right: 10px;
       position: relative;
       width: 30px;
+      appearance: none;
+      outline: none;
 
-      &:before {
-        border: 1px solid map-get($greys, "line");
-        height: 30px;
-        right: 0;
-        top: 0;
-        width: 30px;
+      & + span {
+        display: inline-flex;
+        align-items: center;
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          border: 1px solid map-get($greys, "line");
+          position: absolute;
+          left: 18px;
+          border-radius: 50%;
+        }
       }
-
-      &:before,
-      &:after {
-        background-color: #fff;
-        border-radius: 50%;
-        box-sizing: border-box;
-        content: "";
+      &:checked + span:after {
+        background-color: map-get($colors, "primary");
         display: inline-block;
-        margin-left: -20px;
-        position: absolute;
-      }
-
-      &:after {
         content: "";
         height: 14px;
-        right: 8px;
-        top: 8px;
         width: 14px;
-      }
-
-      &:checked:after {
-        background-color: map-get($colors, "primary");
+        border-radius: 50%;
+        position: absolute;
+        left: 26px;
       }
     }
   }

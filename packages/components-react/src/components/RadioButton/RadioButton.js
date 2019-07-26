@@ -39,7 +39,7 @@ const RadioButton = (props) => {
           value={value}
           {...other}
         />
-        {labelText}
+        <span>{labelText}</span>
       </label>
     </div>
   );
