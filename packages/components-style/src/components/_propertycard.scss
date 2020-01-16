@@ -42,9 +42,6 @@ $grid-gutter: 40px;
 
     &:hover {
       box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.15);
-      .property-card__image {
-        filter: blur(2px);
-      }
       .property-card__label,
       .property-card__tour-link {
         display: none;
@@ -53,7 +50,6 @@ $grid-gutter: 40px;
         display: block;
       }
       .property-card__figure figcaption {
-        background: rgba(0,0,0,.3);
         align-items: center;
         justify-content: center;
       }
