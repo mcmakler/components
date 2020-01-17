@@ -20,15 +20,14 @@ yarn
 Then install all NPM packages for every library inside the `packages` folder and link them together.
 We're able to do this through [lerna](https://github.com/lerna/lerna).
 ```
-yarn bootstrap
+yarn bootstrap && yarn build
 ```
-
 
 ## Run the Storybook based demo of the components
 The package react-components contains [Storybook](https://github.com/storybooks/storybook) as a demo.
 
 ```
-cd packages/react-components
+cd packages/components-react
 npm run serve
 ```
 
