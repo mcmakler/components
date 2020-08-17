@@ -22,7 +22,7 @@
   },
   "sideEffects": false,
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "husky": "^0.13.4",
     "rimraf": "^2.6.2",
     "sass-lint": "^1.12.1"
