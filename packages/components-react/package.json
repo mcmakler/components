@@ -11,7 +11,7 @@
     "LICENSE",
     "README.md"
   ],
-  "version": "1.3.3",
+  "version": "1.3.4",
   "license": "MIT",
   "sideEffects": false,
   "repository": "https://github.com/mcmakler/components/packages/react-components",
