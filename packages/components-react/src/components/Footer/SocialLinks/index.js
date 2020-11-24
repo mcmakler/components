@@ -1,4 +1,4 @@
-import { FaFacebookF } from 'react-icons/fa/index.esm';
+import { FaFacebookF } from 'react-icons/fa/index';
 import { IoLogoTwitter, IoLogoInstagram } from 'react-icons/io';
 import { TiSocialLinkedin } from 'react-icons/ti';
 
