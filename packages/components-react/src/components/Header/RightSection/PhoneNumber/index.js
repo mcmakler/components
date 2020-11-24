@@ -1,4 +1,4 @@
-import { FaPhone } from 'react-icons/fa/index.esm';
+import { FaPhone } from 'react-icons/fa/index';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,18 +7,18 @@ const PhoneNumber = ({
   phoneNumberTarget,
   phoneNumberText,
 }) => (
-  <a className="header__contact" href={`tel:${phoneNumberTarget}`}>
-    <div className="header__phone-number-container">
-      <FaPhone className="header__phone-icon" />
-      <span className="header__phone-number">
-        {phoneNumberLabel}
+    <a className="header__contact" href={`tel:${phoneNumberTarget}`}>
+      <div className="header__phone-number-container">
+        <FaPhone className="header__phone-icon" />
+        <span className="header__phone-number">
+          {phoneNumberLabel}
+        </span>
+      </div>
+      <span className="header__phone-label">
+        {phoneNumberText}
       </span>
-    </div>
-    <span className="header__phone-label">
-      {phoneNumberText}
-    </span>
-  </a>
-);
+    </a>
+  );
 
 PhoneNumber.propTypes = {
   phoneNumberLabel: PropTypes.string.isRequired,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { FaChevronDown } from 'react-icons/fa/index.esm';
+import { FaChevronDown } from 'react-icons/fa/index';
 import './Select.scss';
 
 const Select = (props) => {
@@ -68,8 +68,8 @@ Select.propTypes = {
 Select.defaultProps = {
   className: '',
   kind: 'primary',
-  onChange: () => {},
-  onClick: () => {},
+  onChange: () => { },
+  onClick: () => { },
 };
 
 export default Select;
