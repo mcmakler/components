@@ -2827,9 +2827,9 @@ css-selector-tokenizer@^0.7.0:
     regexpu-core "^1.0.0"
 
 css-what@2.1:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.2.tgz#c0876d9d0480927d7d4920dcd72af3595649554d"
-  integrity sha512-wan8dMWQ0GUeF7DGEPVjhHemVW/vy6xUYmFzRY8RYqgA0JtXC9rJmbScBjqSu6dg9q0lwPQy6ZAmJVr3PPTvqQ==
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
+  integrity sha512-a+EPoD+uZiNfh+5fxw2nO9QwFa6nJe2Or35fGY6Ipw1R3R4AGz1d1TEZrCegvw2YTmZ0jXirGYlzxxpYSHwpEg==
 
 cssesc@^0.1.0:
   version "0.1.0"
@@ -5974,10 +5974,10 @@ math-random@^1.0.1:
   resolved "https://registry.yarnpkg.com/math-random/-/math-random-1.0.4.tgz#5dd6943c938548267016d4e34f057583080c514c"
   integrity sha512-rUxjysqif/BZQH2yhd5Aaq7vXMSx9NdEsQcyA07uEzIvxgI7zIr33gGsh+RU0/XjmQpCW7RsVof1vlkvQVCK5A==
 
-mcmakler-components-style@^1.3.2:
-  version "1.3.2"
-  resolved "https://verdaccio-develop.mcmakler.com/mcmakler-components-style/-/mcmakler-components-style-1.3.2.tgz#19fb7f2d61e57f8e4d799d342f830c744e8f50d6"
-  integrity sha512-AOYwnsoKC05yAlgedAZDN5cgZqEU/h9pHmQfAgDHZbQO0dFKCqg+wVz2zeMCsH1VIqjHXISUZkEpPlJFKlfPvA==
+mcmakler-components-style@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/mcmakler-components-style/-/mcmakler-components-style-1.3.3.tgz#5606f052dbab0b80bb374062f4797bc8a196c3a4"
+  integrity sha512-P5zrmTNEc4NpnI/9tDHgqptmZi/gDYp4wd5urY+2Wf3tjwYJEgywpZixSL/2C2hVhs4JKzapFnyUhstg02U70A==
   dependencies:
     bulma "^0.6.0"
 
